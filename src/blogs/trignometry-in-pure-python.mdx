@@ -1,0 +1,77 @@
+---
+title: Trignometry With Pure Python
+description: Calculating the value of sin without using any modules, just pure and raw mathematics. Covers Taylor Series and Bhaskara's approximation
+date: 29 Jul 2023
+author: Namish Pande
+category: math
+---
+import {Sin} from "../components/Maths.jsx"
+
+<Sin client:load/>
+
+## Bhaskaras's Appoximation Formula
+
+Discovered by 7th century mathematician Bhaskara I, this formula is elegant and simpler than the next method that I am gonna discuss. While it does not give the perfect value, it is still a very good approximation
+
+<div align="center" class="bg-darker text-xl md:text-3xl py-16 px-2 font-mono my-6">
+ $$\sin (x) = \dfrac { 4 \times x ( 180 - x ) } { 40500 - x (180 - x) }$$
+</div>
+
+The graphs of sin x and the approximation formula are visually indistinguishable and are nearly identical.
+
+### Python Implementation
+
+```py
+angle = 30
+def sin(x):
+    return ( 4*x*(180-x) ) / ( 40500 - x *(180-x) )
+def cos(x):
+    return sin(90 - x)
+def tan(x):
+    return sin(x) / cos(x)
+```
+## Taylor Series
+
+So lets say you have a robot that can draw any function you want but its kinda like AI and gets better with more functions we feed it. The "sine" is a function that goes infinitely up and down. But the robot doesn't know how to draw the sine curve directly.
+
+So to teach it how to draw a complex curve, we give it a set of simpler instructions called the `Taylor Series`. These instructions tell robot how to draw a bunch of smaller, simpler curves called "polynomials."
+
+Each polynomial is like a tiny part of the sine curve. The more polynomials we use, the more accurate our drawing becomes. It's like putting together puzzle pieces to make a bigger picture.
+
+Eventually there will be a point where there would be enough polynomials to make the robots drawing almost identical to the actual sine curve
+<div align="center" class="bg-darker py-16 text-xl md:text-3xl px-2 font-mono my-6">
+ $$\sin(x) = x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \dfrac{x^9}{9!} - \ldots $$
+</div>
+
+```py
+pi = 3.14592653589793238462643383279502
+def f(n):  # Factorial Function
+    if n == 1 or n == 0:
+        return 1
+    else:
+        return n * f(n - 1)
+
+def deg(x): # convert deg to radians
+    rad = x * pi/180
+    return rad
+
+def sin(x):  # Taylor Expansion of sinx
+    x = deg(x)
+    k = 0
+    sinx = 0
+    while x >= pi:
+        x -= pi
+    if pi > x > pi / 2:
+        x = pi - x
+    while k < 15:
+        sinx += (-1)**k * x**(2*k + 1) / f(2*k + 1)
+        k += 1
+    return sinx
+```
+
+## Credits
+
++ [https://scholarworks.umt.edu/cgi/viewcontent.cgi?article=1313&context=tme](https://scholarworks.umt.edu/cgi/viewcontent.cgi?article=1313&context=tme)
++ [https://nes.is-a.dev/out/2022/approximating-sin.html](https://nes.is-a.dev/out/2022/approximating-sin.html)
++ [https://en.wikipedia.org/wiki/Taylor_series](https://en.wikipedia.org/wiki/Taylor_series)
++ [https://www.youtube.com/watch?v=3d6DsjIBzJ4](https://www.youtube.com/watch?v=3d6DsjIBzJ4)

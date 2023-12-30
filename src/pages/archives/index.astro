@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro"
+
+let allPosts = await Astro.glob("../../blogs/*.mdx");
+let arr = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
+---
+<Layout title="The Interim" description="List Of Archives">
+  <div class="div w-screen ">
+    <div class="flex justify-center items-center gap-2 lg:gap-0">
+      <div class="w-full md:w-3/4 p-2">
+        <div class="text-slate-950  p-2 md:p-8 lg:p-8 flex flex-col gap-8 md:gap-4">
+          <ul class="flex flex-wrap w-full">
+            {arr.map((item, index) => {
+        const href = `/archives/${item.file.split("/").pop().split(".").shift()}`;
+        return <a href={href} class="cursor-pointer flex flex-col gap-3 md:w-1/2 flex flex-col items-start">
+                <div class="lg:px-16 lg:py-8 md:px-12 px-8 py-4 flex flex-col items-start">
+                  <div class="flex gap-2">
+                    <div  class="p-2 font-mono font-light bg-mbg rounded-md text-fg">{item.frontmatter.category}</div>
+                  </div>
+                  <h2 class="sm:text-3xl text-2xl font-serif font-medium text-primary mt-4 mb-4"><span class="text-fg font-sans mr-2 font-bold">{index + 1}.</span>{item.frontmatter.title}</h2>
+                  <p class="leading-relaxed mb-4 text-lg text-fg">{item.frontmatter.description}</p>
+                  <p class="leading-relaxed flex-end text-md text-fg">{item.frontmatter.date}</p>
+                </div>
+                </a>
+                })}
+          </ul>
+        </div>
+      </div>
+    </div >
+  </div >
+  </div>
+</Layout>
+<style>
+</style>

@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro"
+let allPosts = await Astro.glob("../blogs/*.mdx");
+let blogs = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+    );
+    let a = [blogs[0], blogs[1], blogs[2], blogs[3]]
+const projects = [
+  {
+    name: 'crystal',
+    desc: 'nix dotfiles for my daily driver. comes with awesome as the window manager',
+    tech: [{ name: 'nix', color: 'bg-indigo-400' }, { name: 'ricing', color: 'bg-purple-300' }]
+  },
+  {
+    name: 'kodo',
+    desc: 'neovim configuration that is speedy, usable, and very good looking',
+    tech: [{ name: 'neovim', color: 'bg-green-400' }, { name: 'lua', color: 'bg-blue-900' }]
+  },
+  {
+    name: 'prism',
+    desc: 'neovim plugin to easily have custom colorschemes with caching for speed',
+    tech: [{ name: 'neovim', color: 'bg-green-400' }, { name: 'lua', color: 'bg-blue-900' }]
+  },
+  {
+    name: 'kinben',
+    desc: 'a personal dashboard, lofi player, pomodoro timer and a kanban board',
+    tech: [{ name: 'next', color: 'bg-teal-300' }, { name: 'tailwind', color: 'bg-blue-300' }]
+  },
+  ]
+---
+<Layout title="The Interim" description="nam's personal website and blog.">
+    <div class="w-full flex justify-center p-8 flex-col items-center gap-2">
+      <h1 class="text-3xl sm:text-5xl font-bold text-center text-fg ok mb-12px">
+        The <span class="text-primary font-serif"> Interim </span>
+      </h1>
+      <div class="text-xl typeit text-center font-mono text-fg my-4"></div>
+      <div class="flex flex-wrap gap-8 justify-center">
+        <div class="md:p-8 p-4 rounded-md bg-mbg sm:w-[20rem] md:w-[23rem]">
+          <h1 class="text-fg text-lg font-bold">Recent Archives</h1>
+          {a.map((i, j) => {
+            return <div class="py-2 cursor-pointer">
+              <a href={`/archives/${i.file.split("/").pop().split(".").shift()}`}><div class="flex justify-between">
+                <p class="text-primary">{i.frontmatter.title}</p>
+              </div>
+              <p class="text-fg">{i.frontmatter.description.length > 64 ? i.frontmatter.description.substring(0, 64) + "..." : i.frontmatter.description}</p></a>
+            </div>
+          })}
+        </div>
+        <div class="md:p-8 p-4 rounded-md  bg-mbg sm:w-[20rem] md:w-[23rem]">
+          <h1 class="text-fg text-lg font-bold">Pinned Experiments</h1>
+          {projects.map((i, j) => {
+            return <div class="py-2">
+              <a href={`https://github.com/chadcat7/${i.name}`}>
+                <div class="flex justify-between">
+                  <p class="text-primary">{i.name}</p>
+                </div>
+                <p class="text-fg">{i.desc}</p>
+              </a>
+            </div>
+          })}
+        </div>
+      </div>
+      <div class="text-2xl text-fg flex flex-wrap gap-4 mt-6">
+        <a href="https://discord.com/users/715825910611443722"><i class="hover:text-primary ph-fill ph-discord-logo"></i></a>
+        <a href="https://open.spotify.com/user/1mze9yx41llvtrkcvr8rh8zzo?si=e9f67f27dd7c48c0"><i class="hover:text-primary ph-fill ph-spotify-logo"></i></a>
+        <a href="https://www.reddit.com/user/ChadCat5207"><i class="hover:text-primary ph-fill ph-reddit-logo"></i></a>
+      </div>
+    </div>
+</Layout>
+<script>
+  new TypeIt(".typeit", {
+        lifeLike: true,
+      waitUntilVisible: true,
+  loop: true,
+  }).type("Attention! Now boarding The Interim", {delay: 500}).delete("Attention! Now boarding The Interim".length).type("A small section in this universe where time has no literal meaning", {delay: 500}).delete("A small section in this universe where time has no literal meaning".length).type("Feel free to sit back and enjoy", {delay: 500}).delete("Feel free to sit back and enjoy".length).go();
+</script>

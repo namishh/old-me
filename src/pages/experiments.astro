@@ -1,0 +1,169 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Project from "../components/Project.astro"
+const ld = [
+  {
+    name: 'crystal',
+    desc: 'nix dotfiles for my daily driver. comes with awesome as the window manager',
+    tech: [{ name: 'nix', color: 'bg-indigo-400' }, { name: 'ricing', color: 'bg-purple-300' }]
+  },
+  {
+    name: 'kodo',
+    desc: 'neovim configuration that is speedy, usable, and very good looking',
+    tech: [{ name: 'neovim', color: 'bg-green-400' }, { name: 'lua', color: 'bg-blue-900' }]
+  },
+  {
+    name: 'prism',
+    desc: 'neovim plugin to easily have custom colorschemes with caching for speed',
+    tech: [{ name: 'neovim', color: 'bg-green-400' }, { name: 'lua', color: 'bg-blue-900' }]
+  },
+  {
+    name: 'dwm',
+    desc: 'my custom dwm build that is both beautiful and functional',
+    tech: [{ name: 'c', color: 'bg-green-400' }, { name: 'ricing', color: 'bg-blue-900' }]
+  },
+  {
+    name: 'st',
+    desc: 'an actual usable build of the suckless terminal. (also looks good)',
+    tech: [{ name: 'c', color: 'bg-green-400' }, { name: 'ricing', color: 'bg-blue-900' }]
+  },
+]
+const web = [
+  {
+    name: 'kinben',
+    desc: 'a personal dashboard, lofi player, pomodoro timer and a kanban board',
+    tech: [{ name: 'next', color: 'bg-teal-300' }, { name: 'tailwind', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'cyquest',
+    desc: 'website for the cyquest 2023, made with a lot of head smashing and generous npm repos',
+    tech: [{ name: 'react', color: 'bg-teal-300' }, { name: 'tailwind', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'chadcat7.github.io',
+    desc: 'basically the blog you\'re seeing rn. rewritten with astro and tailwind',
+    tech: [{ name: 'astro', color: 'bg-teal-300' }, { name: 'tailwind', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'save-wildlife',
+    desc: 'website made for a competiton for wildlife conservation',
+    tech: [{ name: 'html', color: 'bg-orange-400' }, { name: 'javascript', color: 'bg-yellow-200' }, { name: 'sass', color: 'bg-rose-300' }]
+  },
+  {
+    name: 'project-news-flask',
+    desc: 'a very simple news website with flask',
+    tech: [{ name: 'html', color: 'bg-orange-400' }, { name: 'python', color: 'bg-blue-300' }, { name: 'bootstrap', color: 'bg-purple-300' }]
+  },
+  {
+    name: 'bubble',
+    desc: 'a personal diary app with database and authentication!',
+    tech: [{ name: 'html', color: 'bg-orange-400' }, { name: 'python', color: 'bg-blue-300' }, { name: 'bootstrap', color: 'bg-purple-300' }]
+  },
+  {
+    name: 'marvel-vs-dc',
+    desc: 'a website made for a fictional upcoming blockbuster',
+    tech: [{ name: 'react', color: 'bg-teal-300' }, { name: 'sass', color: 'bg-rose-300' }]
+  },
+  {
+    name: 'thaifu',
+    desc: 'very simple landing page to mess around with gsap animations',
+    tech: [{ name: 'html', color: 'bg-orange-400' }, { name: 'javascript', color: 'bg-yellow-200' }, { name: 'sass', color: 'bg-rose-300' }]
+  },
+  {
+    name: 'mandawali-maniacs',
+    desc: 'a website made for a competiton about a local gaming squad',
+    tech: [{ name: 'react', color: 'bg-teal-300' }, { name: 'sass', color: 'bg-rose-300' }]
+  },
+  {
+    name: 'cloudvance-delivery',
+    desc: 'a website about a futuristic way of delivering items to your home',
+    tech: [{ name: 'html', color: 'bg-orange-400' }, { name: 'javascript', color: 'bg-yellow-200' }, { name: 'sass', color: 'bg-rose-300' }]
+  },
+  {
+    name: 'nftcringe',
+    desc: 'a website for a 1 week web dev competition put together in 4hours (hooray procrastication) ',
+    tech: [{ name: 'html', color: 'bg-teal-300' }, { name: 'css', color: 'bg-rose-300' }]
+  },
+]
+
+const other = [
+  {
+    name: 'aoc2k23',
+    desc: 'barebones image editor powered by opencv, number and tkinter',
+    tech: [{ name: 'python', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'geomys',
+    desc: 'learning a new language by making a new language',
+    tech: [{ name: 'golang', color: 'bg-blue-300' }, { name: 'wip', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'photomena',
+    desc: 'barebones image editor powered by opencv, number and tkinter',
+    tech: [{ name: 'python', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'spirit-ai',
+    desc: 'actually not an ai, but a very cool voice assitant to look up things',
+    tech: [{ name: 'python', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'news_app_very_simple',
+    desc: 'my first project in python. made using newsapi and tkinter',
+    tech: [{ name: 'python', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'marshmallow',
+    desc: 'discord bot to keep the server cool! made with discord.py',
+    tech: [{ name: 'python', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'marshmallow-rewrite',
+    desc: 'a better and upgraded version with like 3x the features with discord.js',
+    tech: [{ name: 'javascript', color: 'bg-yellow-200' }]
+  },
+]
+
+const projects = [
+  {
+    title: "Linux And Development",
+    projects: ld
+  },
+    {
+    title: "Web Development",
+    projects: web
+    },
+    {
+    title: "Others",
+    projects: other
+    }
+  ]
+---
+<Layout title="The Interim" description="List of personal projects">
+      <div class="text-slate-50 p-2 sm:p-8 md:p-8 md:px-32 lg:px-32 lg:p-8 text-lg leading-10">
+        <section>
+          <h1 class="text-2xl sm:text-3xl font-serif font-bold ms:my-8 my-2 mb-4 px-8 text-fg text-center sm:text-left">Linux / <span class="text-primary">Development</span></h1>
+          <div class="flex flex-wrap w-full ">
+            {ld.map(i => (
+              <Project name={i.name} desc={i.desc} tech={i.tech} />
+            ))}
+          </div>
+        </section>
+        <section class="mt-2 md:mt-10">
+          <h1 class="text-2xl sm:text-3xl font-serif font-bold ms:my-8 my-2 mb-4 px-8 text-fg text-center sm:text-left">Web <span class="text-primary">Development</span></h1>
+          <div class="flex flex-wrap w-full ">
+            {web.map(i => (
+              <Project name={i.name} desc={i.desc} tech={i.tech} />
+            ))}
+          </div>
+        </section>
+        <section class="mt-2 md:mt-10">
+          <h1 class="text-2xl sm:text-3xl font-serif font-bold ms:my-8 my-2 mb-4 px-8 text-fg text-center sm:text-left">Other <span class="text-primary">Projects</span></h1>
+          <div class="flex flex-wrap w-full">
+            {other.map(i => (
+              <Project name={i.name} desc={i.desc} tech={i.tech} />
+            ))}
+          </div>
+        </section>
+      </div>
+</Layout>
