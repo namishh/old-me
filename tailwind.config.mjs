@@ -17,7 +17,7 @@ export default {
     },
     extend: {
       colors: {
-        'darker': "#0a090b",
+        'darker': "#0e0d0f",
         'bg': "#111012",
         'mbg': "#171619",
         "bg3": "#221d23",
