@@ -1,0 +1,49 @@
+---
+title: The Ricing Guide
+description: An Overview into how to rice, from the very beginning till the end.
+date: 26 Dec 2023
+author: Namish Pande
+category: guide 
+---
+
+Ricing, a term commonly used for making your boring ass linux desktop into a treat for your eyes. Sometimes well rices dont turn exactly how you hope them to be. Or maybe you are just new to linux and wanna learn how to rice. Well while this is not a _masterclass_ of some sorts, this should at the very least give you some idea as to how to begin your perfect rice. Here are a list of things we will go through while doing this :).
+
+```markdown
+## Ricing Todo
+- [ ] Choosing a window manager 
+- [ ] Choosing an aesthetic
+- [ ] Choosing a colorscheme // design pattern
+- [ ] Wallpapers
+- [ ] Compositing
+- [ ] The Bars
+- [ ] Notifications
+- [ ] Advanced widget wizardly
+```
+
+So before we begin here is a small disclaimer
+
+<div class="p-4 my-8 bg-darker rounded-lg border-l-disabled border-l-4 font-mono">This is not a **STEP BY STEP TUTORIAL** on how to rice. This is a _GUIDE_ and only aims to assist you.</div>
+
+## Choosing A Window Manager
+First, what is a window manager? In contrast to a DE, which provides a whole user experience with panels, taskbars, systrays, desktop icons, menus and stuff, windows managers usually just come with the ability to do basic window operations such as moving, resizing, and minimizing // maximizing (except one). Now I assuming you know what display protocols and what is the difference between `Wayland` and `Xorg // x11`. In wayland, a window manager if referred to as a `wayland compositor` or just `compositor in short`. Now here are the different wms / compositors you can choose as an beginner.
+
+### Xorg
+
+- [awesome](https://awesomewm.org/): May be the best x11 wm. Probably the most featureful wm that comes with an inbuilt bar, systray, appmenu, context menu, and various layouts. What makes AwesomeWM truly stand out is its Lua scripting support, allowing users to tailor every aspect of their desktop experience to their liking. Be aware of the steep learning climb though.
+
+- [bspwm](https://github.com/baskerville/bspwm): My recommendation for beginners. The unique approach of dividing the screen into binary space partitions enables users to create a well-organized and intuitive workspace. It offers users a lightweight and highly responsive window manager that focuses on functionality without unnecessary frills 
+
+- [dwm](https://dwm.suckless.org/): Now this wm is a bit unique. It follows a bit controversial [suckless philosophy](https://suckless.org/philosophy/), which aims at the software being as barebones and minimal as possible. The only way to customize any suckless software like dwm is to directly edit its source code. While this can be a fun little activity, I will not recommend dwm to absolute newbies.
+
+- [qtile](https://qtile.org/): Qtile is simple and very user friendly. The use of Python as a configuration language makes Qtile accessible to a broader audience, enabling users to personalize their workspace with ease. It has a strong builtin bar that can be molded to altmost anything requested by the user. Also it is one the rare wms on the planet that actually work on both wayland and x11
+
+### Wayland 
+
+- [hyprland](https://hyprland.org/): Probably the most popular wayland compositor in the unixporn circle and for the right reasons. Its light, low on resources, but can be configured endlessly and with ease. Comes with _smoooth_ window movement and workspace changing transitions that for some is a quite a deal breaker. Can be extended to have more fancy border, titlebars and loads of other things via community made plugins.
+
+- [swayfx](https://github.com/WillPower3309/swayfx): A fork of sway but much better. Sway is just a pure [i3](https://i3wm.org) replacement for wayland. But sway never adds any extra feature on their own, they just do what i3 does. Swayfx is a fork that adds eyecandy such as rounded-corners that are anti aliased, blurring, shadows, dimming of unfocused windows, **per application saturation control** and possible fade and window animations
+
+## Choosing An Aesthetic
+
+Alright now we get into actual ricing stuff
+
