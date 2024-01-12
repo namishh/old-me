@@ -19,7 +19,7 @@ export default {
       colors: {
         'darker': "#0b0b0b",
         'bg': "#111111",
-        'mbg': "#151515",
+        'mbg': "#141414",
         "bg3": "#1f1f1f",
         'fg': "#dadada",
         'error': "#e55794",
