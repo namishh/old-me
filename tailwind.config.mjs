@@ -19,8 +19,8 @@ export default {
       colors: {
         'darker': "#0b0b0b",
         'bg': "#111111",
-        'mbg': "#181818",
-        "bg3": "#232323",
+        'mbg': "#151515",
+        "bg3": "#1f1f1f",
         'fg': "#dadada",
         'error': "#e55794",
         'success': "#4be194",
