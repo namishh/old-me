@@ -4,7 +4,7 @@ export const Sin = () => {
   useEffect(() => {
     let all = document.querySelectorAll('.MafsView')
     all.forEach(e => {
-      e.style.setProperty('--mafs-bg', '#0e1114');
+      e.style.setProperty('--mafs-bg', '#111417');
       e.style.setProperty('--mafs-fg', '#dee1e6');
     })
   }, [])
