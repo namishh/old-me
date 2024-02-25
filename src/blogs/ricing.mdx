@@ -1,0 +1,214 @@
+---
+title: The Ricing Guide
+description: An Overview into how to rice, from the very beginning till the end.
+date: 18 Feb 2024
+author: Namish Pande
+category: guide 
+---
+![freosan](/freosan.png)
+
+Ricing, a term commonly used for making your boring ass linux desktop into a treat for your eyes. Sometimes well rices dont turn exactly how you hope them to be. Or maybe you are just new to linux and wanna learn how to rice. Well while this is not a _masterclass_ of some sorts, this should at the very least give you some idea as to how to begin your perfect rice. Here are a list of things we will go through while doing this.
+
+```markdown
+## Ricing Todo
+- [ ] Choosing a window manager 
+- [ ] Choosing an aesthetic
+- [ ] Choosing a colorscheme // design pattern
+- [ ] Wallpapers
+- [ ] Compositing
+- [ ] The Bars And Widgets
+```
+
+So before we begin here is a small disclaimer
+
+<div class="p-4 my-8 bg-darker rounded-lg border-l-disabled border-l-4 font-mono">This is not a **STEP BY STEP TUTORIAL** on how to rice. This is a _GUIDE_ and only aims to assist you.</div>
+
+## Choosing A Window Manager
+First, what is a window manager? In contrast to a DE, which provides a whole user experience with panels, taskbars, systrays, desktop icons, menus and stuff, windows managers usually just come with the ability to do basic window operations such as moving, resizing, and minimizing // maximizing (except one). Now I assuming you know what display protocols and what is the difference between `Wayland` and `Xorg // x11`. In wayland, a window manager if referred to as a `wayland compositor` or just `compositor in short`. Now here are the different wms / compositors you can choose as an beginner.
+
+### Xorg
+
+- [awesome](https://awesomewm.org/): May be the best x11 wm. Probably the most featureful wm that comes with an inbuilt bar, systray, appmenu, context menu, and various layouts. What makes AwesomeWM truly stand out is its Lua scripting support, allowing users to tailor every aspect of their desktop experience to their liking. Be aware of the steep learning climb though.
+
+- [bspwm](https://github.com/baskerville/bspwm): My recommendation for beginners. The unique approach of dividing the screen into binary space partitions enables users to create a well-organized and intuitive workspace. It offers users a lightweight and highly responsive window manager that focuses on functionality without unnecessary frills 
+
+- [dwm](https://dwm.suckless.org/): Now this wm is a bit unique. It follows a bit controversial [suckless philosophy](https://suckless.org/philosophy/), which aims at the software being as barebones and minimal as possible. The only way to customize any suckless software like dwm is to directly edit its source code. While this can be a fun little activity, I will not recommend dwm to absolute newbies.
+
+- [qtile](https://qtile.org/): Qtile is simple and very user friendly. The use of Python as a configuration language makes Qtile accessible to a broader audience, enabling users to personalize their workspace with ease. It has a strong builtin bar that can be molded to almost anything requested by the user. Also it is one the rare wms on the planet that actually work on both wayland and x11
+
+### Wayland 
+
+- [hyprland](https://hyprland.org/): Probably the most popular wayland compositor in the unixporn circle and for the right reasons. Its light, low on resources, but can be configured endlessly and with ease. Comes with _smoooth_ window movement and workspace changing transitions that for some is a quite a deal breaker. Can be extended to have more fancy border, titlebars and loads of other things via community made plugins.
+
+- [swayfx](https://github.com/WillPower3309/swayfx): A fork of sway but much better. Sway is just a pure [i3](https://i3wm.org) replacement for wayland. But sway never adds any extra feature on their own, they just do what i3 does. Swayfx is a fork that adds eyecandy such as rounded-corners that are anti aliased, blurring, shadows, dimming of unfocused windows, **per application saturation control** and possible fade and window animations
+
+<div class="p-4 my-8 bg-darker rounded-lg border-l-warn border-l-4 font-mono">These are just my recommendations for beginners, there are many other compositors/wms available and you are free to use those</div>
+
+## Choosing An Aesthetic
+
+Alright now we get into actual ricing stuff. Now to choose the "looks" or "aesthetic" of the rice. This is what will makes your rice truly unique. Here are some of the common aesthetics that I have come by so far
+
+### Modern // DE Derivative
+Now what defines a 'modern' theme. A modern theme usually plays with small rounded corners (or none), two to three colors for background and only 1 accent color. They usually have very dark background colors and try to replicate the looks of a desktop environment. Anything like buttons or components on widgets have a alternate background color which is usually 10-15% lighter than the background color. Usage of other colors like "red" or "green" are only done where its "widely accepted", for example red for close button and green for battery. They prefer to have walls that are a bit towards the lighter side 
+
+For this, its to preferred to use sans serif fonts like `Product Sans` or `Rubik`
+
+![syndrizlle/fvvm](https://camo.githubusercontent.com/7c31984716c4455a83ac5356abb3dc0bc38501acfe35b1d148cc6b71c1625b83/68747470733a2f2f692e696d6775722e636f6d2f376c47385152452e6a7067)
+
+<div align="center">
+  [syndrizzle/hotfiles at fvwm](https://github.com/Syndrizzle/hotfiles/tree/fvwm)
+</div>
+
+![chadcat7/crystal](/crystal.png)
+<div align="center">
+  [chadcat7/crystal at aura](https://github.com/chadcat7/crystal/tree/aura)
+</div>
+
+### Material
+
+Now material rices are based on google's [material ui](https://m3.material.io).
+
+![material design](https://lh3.googleusercontent.com/pIWcLbKzn27wEbtlCB2X9Tkd_N5YeVF4YXFjIitrd_dIq8fwIJQD8CLpeKNdrZoTBPk8lMnkRBeB-IgUfaCXLj_qpd1ogFTokmKL1mV4TXXA=s0)
+
+The number of colors included in this are significantly more than your average DE derivative, with there being many shades of background colors and foreground colors. Apart from once accent color, material schemes also have a secondary color and a tertiary color. Buttons and components are much more rounded but it still has the capability to retain its 'modern look'. Best font to use with it is `Google Sans`. The below riceis probably one of the cleanest executions of material in ricing we'll ever see 
+
+![end-4/dots-hyprland](/illogicalimpulse.png)
+
+<div align="center">
+  [end-4/dots-hyprland at illogical-impulse](https://github.com/end-4/dots-hyprland)
+</div>
+
+For material its often recommended to generate your colors using [matugen](https://github.com/InioX/matugen) instead of cherry picking the colors. You can do this by 
+
+```bash
+$ matugen --dry-run image path/to/wallpaper.png --json hex
+```
+
+### Cozy // Comfy
+Now this kind of rice is subjective to all. Each person has thier own view on a comfy rice. The colorschemes used in these rices are rather simple and not vibrant. Stardust's awesomewm rice is a good example of a comfortable and cozy rice. 
+
+![sakura](https://star.is-a.dev/src/sakura.png)
+
+<div align="center">
+  [Stardust-kyun/sakura](https://github.com/Stardust-kyun/dotfiles)
+</div>
+
+Sometimes use of a "pixelated" design is also seen. Pixelated rices are bit tricky to pull off because of the lack of good pixelated fonts. Beck's pixel rice is a good example of this
+
+![beck](https://preview.redd.it/awesomewm-pixels-v0-k7rebm5h0h7c1.png?width=1080&crop=smart&auto=webp&s=9f68842d85a7281b34c105e7fe1462b83ff201f3) 
+
+### Minimalism
+Now these rices are the bare minimum and mostly just a bar with workspaces and some indicators. Mostly driven by the words, "less is more". Mostly do not contain widgets, but if they do, its mostly some settings buttons and a music indicator.
+
+![neroz](https://camo.githubusercontent.com/2de1eaeafb7321419c75382f9c9a65485d834d247430aba5c801ee6530aaf7af/68747470733a2f2f692e696d6775722e636f6d2f6e765862394b4e2e706e67)
+
+## Choosing a colorscheme
+
+Now the next big task to be done is choosing a colorscheme for your rice. Now you are free to make your own colorscheme and its ports for different applications, but if you are just starting out to rice, better alternative would be to use an existing colorschemes. The colorscheme to use mainly depends on what aesthetic you want your rice to be. If you want a modern de rice, its better to have rices with backgrounds that are either very dark, like [carburetor](https://github.com/ozwaldorf/carburetor) or light themed like in this [screenshot](https://star.is-a.dev/src/awm/bidule.png). Wanna have something warm and cozy, use colorschemes with browner shades, like [biscuit](https://github.com/Biscuit-Colorscheme), [gruvbox-material](https://github.com/sainnhe/gruvbox-material) or [swamp](https://github.com/masroof-maindak/swamp.nvim).
+<br/>
+There are some themes which I feel goes with every kind of rice, like [decay](https://github.com/decaycs), [catppuccin](https://github.com/catppuccin/catppuccin) (heavily overused in the unixporn community), [everblush](https://github.com/Everblush) and javacafe's [ghost](https://github.com/chadcat7/crystal/blob/main/home/shared/cols/ghost.nix). To make your rice more unique, it's better to use colorschmes that are rarely used. For that you might have to make ports yourself but it pays off. I have already talked about custom themes in nix [in this blog](/blog/nixos). For other distros, mainly you only need to make additional ports for gtk and neovim. Custom GTK themes can be easily made by tweaking around the `_colors.scss` file in [phocus](https://github.com/phocus/gtk).Neovim themes can be made easily with my own plugin [prism](https://github.com/chadcat7/prism). Here are some underrated colorschmes I will recommend. 
+
+```
+1. ghost by javacafe01
+2. biscuit by tsukki9696
+3. fullerene by gw
+4. oxocarbon by shaunsingh
+5. swamp by masroof-maindak 
+6. everblush by mangshrex
+```
+
+## Wallpapers 
+Now this will be a very short section. Because a good wallpaper is a very subjective topic. Wallpaper bascially adds character to your rice. You are free to use whatever wallpaper you like as long as it matches the colorscheme. If you can not find a good wallpaper, here are some places to find them. 
+
+```
+1. https://reddit.com/r/wallpaper (was very good earlier, now is filled with AI trash)
+2. https://pixiv.net
+3. https://wallhaven.cc 
+4. https://github.com/dharmx/walls
+5. https://github.com/Gwynsav/walls
+6. https://github.com/FrenzyExists/wallpapers 
+7. The unixporn discord server (very good source)
+``` 
+
+If you still cant a wall matching your scheme, you can make the wall you like match your scheme with [lutgen](https://github.com/ozwaldorf/lutgen-rs). It is not always necessary to use a very artistic, beautiful wall, sometimes a tiling wallpaper is all you need.
+
+![nuxsh](https://github.com/nuxshed/dotfiles/wiki/media/cafe2-1.png)
+<div align="center">
+  [nuxshed/dotfiles](https://github.com/nuxshed/dotfiles)
+</div> 
+
+Or sometimes, just a plain color.
+
+![kizu](/kizu.png)
+<div align="center">
+  old rice by [janleigh](https://github.com/janleigh/dotfiles)
+</div> 
+
+
+## Compositing
+Now I am not a graphics expert or something. But compositing in ricing usually stands for adding efects like blurs, shadows, corner radius and animations to windows and workspaces. This generally happens with software called `compositors`. In wayland, compositors are in build with the wm you are running (hence are called wayland compositors). In x, you need to install a software for that, most commonly, [picom](https://github.com/yshui/picom). Now if you only want stuff like blurring, corners and shadows, the orignal picom should work fine. But now there are many forks that implement window animations. Window animations many a times come with the cost of slow performance. I was able to find [this fork of picom](https://github.com/fdev31/picom/tree/animation-pr) which was much more resource efficient than others.
+
+<br/>
+
+Its always recommended to also use blur if you are decreasing the opacity of windows,as that makes the text easier to read. It is difficult to find the sweet spot where it should neither look too opaque or too transparent. 
+
+![unixporn](https://preview.redd.it/hyprland-endeavour-os-bussin-v0-jl29adbqwnkc1.jpeg?width=1080&crop=smart&auto=webp&s=41e4f43b5a690983aefaac906b3f9d03c43b1625)
+
+This terminal hits a good spot and is pleasant to look at.
+
+## The Bars And Widgets
+You know 'em, You lov 'em. Widgets. Widgets are a way to actually elevate your rice from plain, bland and ordinary to something extraordinary. Here are your options for bars and widgets.
+
+### Wibox 
+The wibox library is inbuilt in awesomewm, and is only accessible via awesome only. With other builtin libraries like `naughty`, `awful`, wibox becomes insanely powerful and can be used to built almost anything. Kasper's config might the best example of that 
+
+![kwesome](https://github.com/Kasper24/KwesomeDE/raw/main/.github/assets/9.png)
+<div align="center">
+   [kasper24/kwesomede](https://github.com/Kasper24/KwesomeDE)
+</div> 
+
+People have used wibox to build lockscreens, docks, application launchers, bars, wifi menu, right click menus, notifications, financial ledger and even add custom titlebars to make minimalist programs like ncmpcpp, feh more usable. Has a bit of a steep learning curve and docs may not be enough for newbies.
+
+### EWW (Elkowar's Wacky Widgets)
+The OG program that brought widgets to other wms. Use it only if you are using a X11 wm that is not awesome. Has a very limited range of GTK components which should be enough to make a good looking desktop. The widgets are defined in its own lisp like language called [yuck](https://github.com/elkowar/yuck.vim) and styled via sass. The only downsides are no systray (yet) and poor documentation.
+
+![eww dash](https://github.com/dharmx/vile/raw/main/.github/readme/demo.png)
+<div align="center">
+   [dharmx/vile](https://github.com/dharmx/vile)
+</div> 
+
+
+### Ags (Aylur's Gtk Shell)
+The new cool kid in town which should take the wayland ricing community by storm. Its fairly new and is being actively worked upon. Learning curve is easy because javascript is easy. Has multiple inbuilt widgets, but really it can give you access to all GTK widgets possible, a major plus side against eww. Also has systray built in, and more number of css properties supported. But the main thing that makes it miles better than eww is the number of inbuilt services and utility functions. 
+
+<br/>
+Currently fully suppports hyprland. There is a fork by [ozwaldorf](https://github.com/ozwaldorf/ags) which brings support for sway but is yet to be merged. No other wayland compositor is yet fully supported with services.
+
+![end-4/dots-hyprland](https://private-user-images.githubusercontent.com/97237370/293474372-abd05702-a248-4f53-ac82-500219aa19f1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDg4OTg5MDgsIm5iZiI6MTcwODg5ODYwOCwicGF0aCI6Ii85NzIzNzM3MC8yOTM0NzQzNzItYWJkMDU3MDItYTI0OC00ZjUzLWFjODItNTAwMjE5YWExOWYxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjI1VDIyMDMyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc5NzRkMGYyNWM4MjU1YjFmOGIxMTRlMmZlNjIzNWZmOTVjODFmMGQwNTNlZmEyNWM5MGZmZjI4NDdmZmFkODgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.PXH0DCPbD_LpdLdQTiKGSbGyA8TzQUKXOpfBYuTwIrc)
+
+<div align="center">
+  [end-4/dots-hyprland at illogical-impulse](https://github.com/end-4/dots-hyprland)
+</div>
+
+### Special Mention - Fabric
+
+In dead easy words, [Fabric](https://github.com/Fabric-Development/fabric) is like ags but with python. Its still not fully ready to be used and I myself have not tried it yet. So I cannot judge it right now. It claims to work on both x11 and wayland and python can make it very easy to configure. This looks promising but cannot say much yet. 
+
+![fabric](https://github.com/Fabric-Development/fabric/raw/main/assets/example-files-bar-showcase.png)
+<br/>
+### Polybar // Waybar 
+
+What if you do not want the complexity of these widgets and juts want a simple normal rice. You can simply use polybar for x11 and waybar for wayland. They are very limited in terms of functionality, (only colored text for that matter) but might be enough to get your work done. Waybar has a advantage with tasklist, usage of css to style and the functionality to make vertical bars. They can also be used to execute well polished and modern bars as seen below
+
+![polybar by syndrizzle](https://camo.githubusercontent.com/d8332ae7a8cf3b8eb01cc3f0f544f25489910f62242b595909b091fd694ac059/68747470733a2f2f692e696d6775722e636f6d2f454d75616549762e706e67)
+<div align="center">
+   [polybar](https://github.com/syndrizzle/hotfiles/tree/bspwm)
+</div> 
+
+![waybar](https://preview.redd.it/hyprland-glassmorphism-v0-uu7qkonc4az91.png?width=1080&crop=smart&auto=webp&s=4671305853af21742b1d87ffe0d4a3b9b6eb150a)
+<div align="center">
+waybar by rxhyn
+</div>
+
+## Conclusion
+Well that was long. But hopefully this makes you aware about the options you have when starting out to rice and makes it easy to choose your _ricing stack_. Till next time. See ya!

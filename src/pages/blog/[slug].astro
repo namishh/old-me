@@ -41,7 +41,10 @@ const { title, description, date } = frontmatter;
     @apply text-2xl
   }
  .content ul {
-    @apply list-disc ml-4 text-fg
+    @apply list-disc ml-4 text-fg marker:text-fg
+ }
+ .content ol {
+    @apply list-decimal ml-4 text-fg marker:text-fg
  }
 
  .content a {
