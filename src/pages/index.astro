@@ -24,9 +24,9 @@ let blogs = allPosts.sort(
       <h1 class="text-2xl text-fg"><span class="text-gray-500">(Some of my)</span> Projects <a href="/stuff"><i class="ph ml-2 ph-arrow-right text-sm"></i></a></h1>
       <div class="cardscontainer mt-4 flex flex-wrap gap-4  justify-center"></div>
       <h1 class="text-2xl text-fg mt-8 mb-2"><span class="text-gray-500">Recent</span> Blogs <a href="/blog"><i class="ph ml-2 ph-arrow-right text-sm"></i></a></h1>
-      <ul class="list-decimal	list-inside">
+      <ul class="list-inside">
         {a.map((i, j) => {
-            return <li class="cursor-pointer">
+            return <li class="cursor-pointer my-6">
               <a href={`/blog/${i.file.split("/").pop().split(".").shift()}`}>                
                 <p class="text-fg">{j + 1}. {i.frontmatter.title} <span class="ml-2 md:ml-8 text-gray-500">{i.frontmatter.date}</span></p>
                 <p class="text-fg"></p></a>
@@ -34,7 +34,7 @@ let blogs = allPosts.sort(
         })}
       </ul>
       <div class="my-8 h-[2px] px-16 bg-bg3 inline-block"></div>
-      <p class="text-[20px] text-bright">I am available at <a target="_blank" href="https://discord.com/users/715825910611443722" class="text-fg underline">discord</a></span>, <a href="https://reddit.com/u/ChadCat5207" target="_blank" class="text-fg underline">reddit</a> and ofc <a target="_blank" href="https://github.com/chadcat7" class="text-fg underline">github</a>. You can also contact me via my mail adress <span class="text-fg">namish@tuta.io</span>. Anyways here are some of my cool friends, do give them a follow.
+      <p class="text-[20px] text-bright">I am available at <a target="_blank" href="https://discord.com/users/715825910611443722" class="text-fg underline">discord</a></span>, <a href="https://reddit.com/u/ChadCat5207" target="_blank" class="text-fg underline">reddit</a> and ofc <a target="_blank" href="https://github.com/chadcat7" class="text-fg underline">github</a>. You can also contact me via my mail address <span class="text-fg">namish@tuta.io</span>. Anyways here are some of my cool friends, do give them a follow.
     <div class="flex gap-[6px] my-4">
       <a href="https://github.com/ni5arga" target="_blank"><img class="rounded-full h-8" src="https://avatars.githubusercontent.com/u/45588772?v=4" alt="ni5arga"></a>
       <a href="https://github.com/dharmx" target="_blank"><img class="rounded-full h-8" src="https://avatars.githubusercontent.com/u/80379926?v=4" alt="dharmx"></a>
@@ -58,7 +58,7 @@ fetch(repos)
         <a class="bg-mbg p-4 text-bright rounded-xl w-full md:w-[15.5rem]" href="${d.html_url}"><article> 
           <h3 class="text-fg">${d.name}</h3>
           <p class="mb-2">${d.description}</p>
-          <p><i class="hover:text-primary ph-fill ph-star"></i> ${d.stargazers_count}</p>
+          <p><i class="hover:text-warn ph-fill ph-star"></i> ${d.stargazers_count}</p>
         </article></a>
       `;
       } 
