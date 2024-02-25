@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro"
+
+let allPosts = await Astro.glob("../../blogs/*.mdx");
+let arr = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
+---
+<Layout title="Blog" description="List Of Archives">
+  <div class="div w-screen ">
+    <div class="flex justify-center items-center gap-2 lg:gap-0">
+      <div class="w-full md:w-2/3 lg:w-1/2 p-2">
+        <div class="text-slate-950  p-2 md:p-8 lg:p-8 flex justify-start flex-col gap-8 md:gap-4">
+          <ul class="flex flex-wrap w-full">
+            {arr.map((item, index) => {
+        const href = `/blog/${item.file.split("/").pop().split(".").shift()}`;
+        return <a href={href} class="cursor-pointer flex flex-col gap-3 flex flex-col items-start">
+          <div class="lg:px-16 lg:py-2 md:px-12 px-8 py-4 flex flex-col items-start">
+                  <div class="flex flex-wrap items-center gap-2 md:gap-4">
+                    <h2 class="sm:text-2xl text-2xl font-bold text-fg mt-4 mb-4"><span class="text-fg font-sans mr-2 font-bold text-primary">{index + 1}.</span>{item.frontmatter.title}</h2>
+
+                    <div class="flex items-center gap-2 md:gap-4">
+                    <div  class="p-2 font-mono font-light bg-mbg rounded-md text-fg">{item.frontmatter.category}</div>
+                    <p class="leading-relaxed flex-end text-md text-fg">{item.frontmatter.date}</p>
+                    </div>
+                  </div>
+                  <p class="leading-relaxed text-bright mb-4 text-lg text-bright">{item.frontmatter.description}</p>
+                </div>
+                </a>
+                })}
+          </ul>
+        </div>
+      </div>
+    </div >
+  </div >
+  </div>
+</Layout>
+<style>
+</style>

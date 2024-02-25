@@ -64,12 +64,28 @@ const { title, description } = Astro.props;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Rubik;
+    font-family: Product Sans;
   }
 
   .serif {
     font-family: "Bree Serif";
   }
+  @font-face {
+  font-family: 'Product Sans';
+  src: url('/fonts/ProductSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Product Sans Light';
+    src: url('/fonts/ProductSans-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+    font-display: swap;
+  }
+
 
   @font-face {
   font-family: 'Iosevka';
@@ -81,14 +97,14 @@ const { title, description } = Astro.props;
 
     :root {
       --astro-code-color-text: #dee1e6;
-      --astro-code-color-background: #111417;
-      --astro-code-token-constant: #c68aee;
-      --astro-code-token-string: #78DBA9;
+      --astro-code-color-background: #060606;
+      --astro-code-token-constant: #d466e9;
+      --astro-code-token-string: #56966e;
       --astro-code-token-comment: #485263;
-      --astro-code-token-keyword: #e26c7c;
-      --astro-code-token-parameter: #e26c7c;
-      --astro-code-token-function: #9cd1ff;
-      --astro-code-token-string-expression: #66cd99;
+      --astro-code-token-keyword: #c14d53;
+      --astro-code-token-parameter: #c14d53;
+      --astro-code-token-function: #6a9f98;
+      --astro-code-token-string-expression: #56966e;
       --astro-code-token-punctuation: #dee1e6;
       --astro-code-token-link: #dee1e6;
   }

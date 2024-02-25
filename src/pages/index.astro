@@ -7,72 +7,61 @@ let blogs = allPosts.sort(
     new Date(a.frontmatter.date).valueOf()
     );
     let a = [blogs[0], blogs[1], blogs[2], blogs[3]]
-const projects = [
-  {
-    name: 'crystal',
-    desc: 'nix dotfiles for my daily driver. comes with awesome as the window manager',
-    tech: [{ name: 'nix', color: 'bg-indigo-400' }, { name: 'ricing', color: 'bg-purple-300' }]
-  },
-  {
-    name: 'kodo',
-    desc: 'neovim configuration that is speedy, usable, and very good looking',
-    tech: [{ name: 'neovim', color: 'bg-green-400' }, { name: 'lua', color: 'bg-blue-900' }]
-  },
-  {
-    name: 'prism',
-    desc: 'neovim plugin to easily have custom colorschemes with caching for speed',
-    tech: [{ name: 'neovim', color: 'bg-green-400' }, { name: 'lua', color: 'bg-blue-900' }]
-  },
-  {
-    name: 'kinben',
-    desc: 'a personal dashboard, lofi player, pomodoro timer and a kanban board',
-    tech: [{ name: 'next', color: 'bg-teal-300' }, { name: 'tailwind', color: 'bg-blue-300' }]
-  },
-  ]
 ---
-<Layout title="The Interim" description="nam's personal website and blog.">
-    <div class="w-full flex justify-center p-8 flex-col items-center gap-2">
-      <h1 class="text-3xl sm:text-5xl font-bold text-center text-fg ok mb-12px">
-        The <span class="text-primary font-serif"> Interim </span>
-      </h1>
-      <div class="text-xl typeit text-center font-mono text-fg my-4"></div>
-      <div class="flex flex-wrap gap-8 justify-center">
-        <div class="md:p-8 p-4 rounded-md bg-mbg sm:w-[20rem] md:w-[23rem]">
-          <h1 class="text-fg text-lg font-bold">Recent Archives</h1>
-          {a.map((i, j) => {
-            return <div class="py-2 cursor-pointer">
-              <a href={`/archives/${i.file.split("/").pop().split(".").shift()}`}><div class="flex justify-between">
-                <p class="text-primary">{i.frontmatter.title}</p>
-              </div>
-              <p class="text-fg">{i.frontmatter.description.length > 64 ? i.frontmatter.description.substring(0, 64) + "..." : i.frontmatter.description}</p></a>
-            </div>
-          })}
-        </div>
-        <div class="md:p-8 p-4 rounded-md  bg-mbg sm:w-[20rem] md:w-[23rem]">
-          <h1 class="text-fg text-lg font-bold">Pinned Experiments</h1>
-          {projects.map((i, j) => {
-            return <div class="py-2">
-              <a href={`https://github.com/chadcat7/${i.name}`}>
-                <div class="flex justify-between">
-                  <p class="text-primary">{i.name}</p>
-                </div>
-                <p class="text-fg">{i.desc}</p>
-              </a>
-            </div>
-          })}
-        </div>
+<Layout title="nam" description="nam's personal website and blog.">
+  <div class="w-full flex justify-center md:p-8 flex-col items-center gap-2">
+
+    <div class="md:w-2/3 py-4 px-8 w-full lg:w-1/2 flex-col">
+      <div class="flex gap-4 items-center">
+      <img src="/profilepicture.png" alt="pfp" class="h-8 rounded-full border-[1px]	border-fg">
+    <h1 class="text-2xl text-left text-fg self-end">Namish</h1>
+    <h1 class="text-md text-gray-500 text-left self-end">16M (he/him)</h1>
       </div>
-      <div class="text-2xl text-fg flex flex-wrap gap-4 mt-6">
-        <a href="https://discord.com/users/715825910611443722"><i class="hover:text-primary ph-fill ph-discord-logo"></i></a>
-        <a href="https://open.spotify.com/user/1mze9yx41llvtrkcvr8rh8zzo?si=e9f67f27dd7c48c0"><i class="hover:text-primary ph-fill ph-spotify-logo"></i></a>
-        <a href="https://www.reddit.com/user/ChadCat5207"><i class="hover:text-primary ph-fill ph-reddit-logo"></i></a>
-      </div>
+      <p class="mt-8 text-[20px] text-bright">Hello! I am Namish, you can call me <i class="text-fg">'nam'</i> or refer me via my internet alias, <i class="text-fg">chadcat7</i>.</p>
+      <p class="mt-4 text-[20px] text-bright">An above average programmer. Likes minimalism, <span class="text-fg">neovim</span> and <span class="text-fg">nixos</span>. Kinda good in <span class="text-fg">ricing</span>, <span class="text-fg">designing</span> and <span class="text-fg">front end development</span>. Writes <span><a href="/poems" class="text-fg underline">poems</a></span> and <span><a href="/blog" class="text-fg underline">blogs</a></span> in my free time.</p>
+      <p class="mt-2 text-[20px] text-bright">Lead Developer in my school club.</p>
+      <div class="my-8 h-[2px] px-16 bg-bg3 inline-block"></div>
+      <h1 class="text-2xl text-fg"><span class="text-gray-500">(Some of my)</span> Projects <a href="/stuff"><i class="ph ml-2 ph-arrow-right text-sm"></i></a></h1>
+      <div class="cardscontainer mt-4 flex flex-wrap gap-4  justify-center"></div>
+      <h1 class="text-2xl text-fg mt-8 mb-2"><span class="text-gray-500">Recent</span> Blogs <a href="/blog"><i class="ph ml-2 ph-arrow-right text-sm"></i></a></h1>
+      <ul class="list-decimal	list-inside">
+        {a.map((i, j) => {
+            return <li class="cursor-pointer">
+              <a href={`/blog/${i.file.split("/").pop().split(".").shift()}`}>                
+                <p class="text-fg">{j + 1}. {i.frontmatter.title} <span class="ml-2 md:ml-8 text-gray-500">{i.frontmatter.date}</span></p>
+                <p class="text-fg"></p></a>
+            </li>
+        })}
+      </ul>
+      <div class="my-8 h-[2px] px-16 bg-bg3 inline-block"></div>
+      <p class="text-[20px] text-bright">I am available at <a href="https://discord.com/users/715825910611443722" class="text-fg underline">discord</a></span>, <a href="https://reddit.com/u/ChadCat5207" class="text-fg underline">reddit</a> and ofc <a href="https://github.com/chadcat7" class="text-fg underline">github</a>. You can also contact me via my mail adress <span class="text-fg">namish@tuta.io</span>. Anyways here are some of my cool friends, do give them a follow.
+    <div class="flex gap-[6px] mt-4">
+      <a href="https://github.com/ni5arga"><img class="rounded-full h-8" src="https://avatars.githubusercontent.com/u/45588772?v=4" alt="ni5arga"></a>
+      <a href="https://github.com/dharmx"><img class="rounded-full h-8" src="https://avatars.githubusercontent.com/u/80379926?v=4" alt="dharmx"></a>
+      <a href="https://github.com/nermalcat69"><img class="rounded-full h-8" src="https://avatars.githubusercontent.com/u/73933669?v=4" alt="nermal"></a>
+      <a href="https://github.com/ditherwither"><img class="rounded-full h-8" src="https://avatars.githubusercontent.com/u/65118061?v=4" alt="dither"></a>
+    </div>
+</p>
+    </div>
     </div>
 </Layout>
 <script>
-  new TypeIt(".typeit", {
-        lifeLike: true,
-      waitUntilVisible: true,
-  loop: true,
-  }).type("Attention! Now boarding The Interim", {delay: 500}).delete("Attention! Now boarding The Interim".length).type("A small section in this universe where time has no literal meaning", {delay: 500}).delete("A small section in this universe where time has no literal meaning".length).type("Feel free to sit back and enjoy", {delay: 500}).delete("Feel free to sit back and enjoy".length).go();
+  const cards = document.querySelector('.cardscontainer')
+const repos = 'https://api.github.com/users/chadcat7/repos';
+
+fetch(repos)
+  .then(res => res.json())
+  .then(data => {
+    data.map((d, i) => {
+      if ( ['crystal', 'kodo', 'prism'].indexOf(d.name) > -1 ) {
+      cards.innerHTML += `
+        <a class="bg-mbg p-4 text-bright rounded-xl w-full md:w-[15.5rem]" href="${d.html_url}"><article> 
+          <h3 class="text-fg">${d.name}</h3>
+          <p class="mb-2">${d.description}</p>
+          <p><i class="hover:text-primary ph-fill ph-star"></i> ${d.stargazers_count}</p>
+        </article></a>
+      `;
+      } 
+    })
+  })
 </script>

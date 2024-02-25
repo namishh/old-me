@@ -1,19 +1,20 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 export async function getStaticPaths() {
-const posts = await Astro.glob("../../blogs/*.mdx");
+const posts = await Astro.glob("../../poems/*.mdx");
   return posts.map((p) => ({
     params: { slug: p.file.split("/").pop().split(".").shift() },
     props: { post: p },
   }));
-}
+  }
+
 const { Content, frontmatter } = Astro.props.post;
 const { title, description, date } = frontmatter;
 ---
-<Layout title={title + " - The Interim"} description={description}>
+<Layout title={title} description={description}>
   <div class="flex justify-center">
     <div class="div content flex flex-col gap-2 justify-center items-center  break-words w-full md:w-3/4 lg:w-2/3 text-fg p-4 md:p-8 md:px-16 lg:p-8 lg:px-24 text-lg leading-10">
-      <a href="/archives" class="self-start text-lightpr dark:text-darkpr text-md font-medium underline underline-offset-4 cursor-pointer">Go Back</a>
+      <a href="/poems" class="self-start text-lightpr dark:text-darkpr text-md font-medium underline underline-offset-4 cursor-pointer">Go Back</a>
       <h1 class="text-5xl self-start">{title}</h1>
       <div class="w-full"><Content /></div>
       <div class="self-end">
@@ -28,7 +29,7 @@ const { title, description, date } = frontmatter;
 </Layout>
 <style is:global>
   .content h1, h2, h3, h4 {
-    @apply font-serif my-3
+    @apply font-sans my-3
   }
   .content h1 {
     @apply text-4xl font-bold
