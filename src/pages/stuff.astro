@@ -20,12 +20,12 @@ const ld = [
   {
     name: 'dwm',
     desc: 'my custom dwm build that is both beautiful and functional',
-    tech: [{ name: 'c', color: 'bg-green-400' }, { name: 'ricing', color: 'bg-blue-900' }]
+    tech: [{ name: 'wm', color: 'bg-green-400' }, { name: 'ricing', color: 'bg-blue-900' }]
   },
   {
     name: 'st',
     desc: 'an actual usable build of the suckless terminal. (also looks good)',
-    tech: [{ name: 'c', color: 'bg-green-400' }, { name: 'ricing', color: 'bg-blue-900' }]
+    tech: [{ name: 'terminal', color: 'bg-green-400' }, { name: 'ricing', color: 'bg-blue-900' }]
   },
 ]
 const web = [
@@ -38,6 +38,16 @@ const web = [
     name: 'cyquest',
     desc: 'website for the cyquest 2023, made with a lot of head smashing and generous npm repos',
     tech: [{ name: 'react', color: 'bg-teal-300' }, { name: 'tailwind', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'silxx',
+    desc: 'beautiful concept website made for school event',
+    tech: [{ name: 'astro', color: 'bg-teal-300' }, { name: 'tailwind', color: 'bg-blue-300' }]
+  },
+  {
+    name: 'crypt',
+    desc: 'simple crypt hunt website made for learning actual back end development',
+    tech: [{ name: 'next', color: 'bg-teal-300' }, { name: 'express', color: 'bg-blue-300' }]
   },
   {
     name: 'chadcat7.github.io',
@@ -140,26 +150,26 @@ const projects = [
   ]
 ---
 <Layout title="Projects and Stuff" description="List of personal projects">
-      <div class="text-slate-50 p-2 sm:p-8 md:p-8 md:px-32 lg:px-32 lg:p-8 text-lg leading-10">
-        <section>
-          <h1 class="text-2xl sm:text-3xl  font-bold ms:my-8 my-2 mb-4 px-8 text-fg text-center sm:text-left">Linux / <span class="">Development</span></h1>
-          <div class="flex flex-wrap w-full ">
+      <div class="text-slate-50  p-2 sm:p-8 md:p-8 lg:px-8 lg:p-8 text-lg leading-10">
+        <section class="flex flex-col items-center justify-center w-full">
+          <h1 class="text-2xl sm:text-3xl  font-bold ms:my-8 my-2 mb-4 px-8 text-gray-500 text-center sm:text-left">Linux / <span class="text-fg">Development</span></h1>
+          <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
             {ld.map(i => (
               <Project name={i.name} desc={i.desc} tech={i.tech} />
             ))}
           </div>
         </section>
-        <section class="mt-2 md:mt-10">
-          <h1 class="text-2xl sm:text-3xl  font-bold ms:my-8 my-2 mb-4 px-8 text-fg text-center sm:text-left">Web <span class="">Development</span></h1>
-          <div class="flex flex-wrap w-full ">
+        <section class="mt-2 md:mt-10 flex flex-col items-center justify-center w-full">
+          <h1 class="text-2xl sm:text-3xl  font-bold ms:my-8 my-2 mb-4 px-8 text-gray-500 text-center sm:text-left">Web  <span class="text-fg">Development</span></h1>
+          <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
             {web.map(i => (
               <Project name={i.name} desc={i.desc} tech={i.tech} />
             ))}
           </div>
         </section>
-        <section class="mt-2 md:mt-10">
-          <h1 class="text-2xl sm:text-3xl font-bold ms:my-8 my-2 mb-4 px-8 text-fg text-center sm:text-left">Other <span class="">Projects</span></h1>
-          <div class="flex flex-wrap w-full">
+        <section class="my-2 md:my-10 flex flex-col items-center justify-center w-full">
+          <h1 class="text-2xl sm:text-3xl  font-bold ms:my-8 my-2 mb-4 px-8 text-gray-500 text-center sm:text-left">Other  <span class="text-fg">Projects</span></h1>
+          <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
             {other.map(i => (
               <Project name={i.name} desc={i.desc} tech={i.tech} />
             ))}
