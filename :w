@@ -1,0 +1,39 @@
+
+---
+import Layout from "../layouts/Layout.astro"
+const skills = ['HTML', 'CSS', 'SASS', 'JavaScript', 'TailwindCSS', 'Astro', 'React.js', 'NextJS', 'MongoDB', 'Firebase', 'Express', 'Python', 'Flask', 'Bootstrap', 'Node', 'Figma', 'UI/UX', 'Linux', 'Discord.js', 'Discord.py', 'Lua']
+import Quote from "../components/Quote.astro";
+---
+<Layout title="nam" description="nam's personal website and blog.">
+  <div class="w-full flex justify-center md:p-8 flex-col items-center gap-2">
+
+    <div class="md:w-2/3 py-4 px-8 w-full lg:w-1/2 flex-col">
+      <div class="flex flex-wrap gap-4 items-end justify-between">
+      <div class="flex gap-4 items-center">
+      <img src="/profilepicture.png" alt="pfp" class="h-8 w-8 rounded-full border-[1px]	border-fg">
+    <h1 class="text-2xl text-left text-fg self-end">Namish</h1>
+    <h1 class="text-md text-gray-500 text-left self-end">16M (he/him)</h1>
+      </div>
+      <p class="text-gray-500">num-ish ⋅ mythological god (south east asia)</p>
+      </div>
+      <p class="mt-8 text-[20px] text-bright">Hi! I am your friendly neighbourhood nerd programmer. I am currently studying for <span class="text-fg">JEE</span> but love to program and explore computers in my free time. I am fairly good in <span class="text-fg">designing, front end development, ricing and poetry.</span> I can also fluently play the <span class="text-fg">piano. (Passed Trinity College Grade V)</span></p>
+      <div class="mt-8 h-[2px] px-16 bg-bg3 inline-block"></div>
+      <h1 class="text-2xl text-fg mt-8 mb-2"><span class="text-gray-500">Skill</span> Set</h1>
+      <div class="flex flex-wrap gap-4">
+        {skills.map((i, j) => {
+            return <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">{i}</p>
+        })}
+      </div>
+      <div class="mt-8 h-[2px] px-16 bg-bg3 inline-block"></div>
+      <h1 class="text-2xl text-fg mt-8 mb-2"><span class="text-gray-500">My</span> Setup</h1>
+      <ul class="list-decimal leading-[2.2rem] list-inside mt-4 text-lg text-bright">
+        <li>Operating System: <span class="text-fg">Nix OS</span></li>
+        <li>Window Managers: <span class="text-fg">dwm, awesomewm, swayfx</span></li>
+        <li>Terminal & Shell: <span class="text-fg">wezterm with zsh</span></li>
+        <li>Code Editor: <span class="text-fg">Neovim</span></li>
+      </ul>
+      <div class="mt-8 h-[2px] px-16 bg-bg3 inline-block"></div>
+      <h1 class="text-2xl text-fg mt-8 mb-2"><span class="text-gray-500">Testimonial</span></h1>
+      <Quote/>
+    </div>
+</Layout>
