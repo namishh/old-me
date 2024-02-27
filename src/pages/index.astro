@@ -26,10 +26,10 @@ let blogs = allPosts.sort(
       <h1 class="text-2xl text-fg mt-8 mb-2"><span class="text-gray-500">Recent</span> Blogs <a href="/blog"><i class="ph ml-2 ph-arrow-right text-sm"></i></a></h1>
       <ul class="list-inside">
         {a.map((i, j) => {
-            return <li class="cursor-pointer my-6">
-              <a href={`/blog/${i.file.split("/").pop().split(".").shift()}`}>                
+            return <li class="cursor-pointer my-6 w-full">
+              <a class="flex justify-between w-full" href={`/blog/${i.file.split("/").pop().split(".").shift()}`}>                
                 <p class="text-fg">{j + 1}. {i.frontmatter.title} <span class="ml-2 md:ml-8 text-gray-500">{i.frontmatter.date}</span></p>
-                <p class="text-fg"></p></a>
+              </a>
             </li>
         })}
       </ul>
