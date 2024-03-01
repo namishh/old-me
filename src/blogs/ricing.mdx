@@ -43,7 +43,7 @@ So before we begin here is a small disclaimer
 <div class="p-4 my-8 bg-darker rounded-lg border-l-disabled border-l-4 font-mono">This is not a **STEP BY STEP TUTORIAL** on how to rice. This is a _GUIDE_ and only aims to assist you.</div>
 
 ## Choosing A Window Manager
-First, what is a window manager? In contrast to a DE, which provides a whole user experience with panels, taskbars, systrays, desktop icons, menus and stuff, windows managers usually just come with the ability to do basic window operations such as moving, resizing, and minimizing // maximizing (except one). Now I assuming you know what display protocols are and what is the difference between `Wayland` and `Xorg // X11`. In wayland, a window manager if referred to as a `wayland compositor` or just `compositor` in short. Now here are the different WMs / compositors you can choose as an beginner.
+First, what is a window manager? In contrast to a DE, which provides a whole user experience with panels, taskbars, systrays, desktop icons, menus and stuff, windows managers usually just come with the ability to do basic window operations such as moving, resizing, and minimizing // maximizing (except one). Now I assuming you know what display protocols are and what is the difference between `Wayland` and `Xorg // X11`. If you do not, I would suggest you to [read this](https://www.howtogeek.com/900698/what-is-wayland-on-linux-and-how-is-it-different-from-x/). In wayland, a window manager if referred to as a `wayland compositor` or just `compositor` in short. Now here are the different WMs / compositors you can choose as an beginner.
 
 ### Xorg
 
@@ -77,7 +77,7 @@ Alright now we get into actual ricing stuff. Now to choose the "looks" or "aesth
 ### Modern // DE Derivative
 Now what defines a 'modern' theme. A modern theme usually plays with small rounded corners (or none), two to three colors for background and only 1 accent color. They usually have very dark background colors and try to replicate the looks of a desktop environment. Anything like buttons or components on widgets have a alternate background color which is usually 10-15% lighter than the background color. Usage of other colors like "red" or "green" are only done where its "widely accepted", for example red for close button and green for battery. They prefer to have walls that are a bit towards the lighter side.
 
-For this, its to preferred to use sans serif fonts like `Product Sans` or `Rubik`.
+For this, its to preferred to use sans serif fonts like [Lexend](https://fonts.google.com/specimen/Lexend), [Gabarito](https://fonts.google.com/specimen/Gabarito) or [Rubik](https://fonts.google.com/specimen/Rubik).
 
 ![syndrizlle/fvvm](https://camo.githubusercontent.com/7c31984716c4455a83ac5356abb3dc0bc38501acfe35b1d148cc6b71c1625b83/68747470733a2f2f692e696d6775722e636f6d2f376c47385152452e6a7067)
 
@@ -170,7 +170,7 @@ The problem with using generated colors is that often, they either generate very
 
 Choosing an icon pack and cursor theme is very subjective to the rice you want. For most rices, [papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) works just fine and there is no need to search for another. However if you want some "modern" looking icons, you can go for [reversal](https://github.com/yeyushengfan258/Reversal-icon-theme) or just the [whitesur icon theme](https://github.com/vinceliuice/WhiteSur-icon-theme).
 
-For cursors, unless you have a super specific niche theme in mind, you can just use [phinger cursors](https://github.com/phisch/phinger-cursors), they are the most popular one in unixporn.
+For cursors, unless you have a super specific niche theme in mind, you can just use [phinger cursors](https://github.com/phisch/phinger-cursors) or [bibata](https://github.com/ful1e5/Bibata_Cursor), they work for most aesthetics / themes.
 
 ## Wallpapers 
 Now this will be a very short section. Because a good wallpaper is a very subjective topic. Wallpaper bascially adds character to your rice. You are free to use whatever wallpaper you like as long as it matches the colorscheme. If you can not find a good wallpaper, here are some places to find them. 
@@ -277,7 +277,7 @@ waybar by rxyhn
    [chadwm by siduck](https://github.com/siduck/chadwm)
 </div> 
 
-If you use dwm, then you should strictly stick to the inbuilt dwmbar and extend it with patches and stuff. Here are a list of patches you can apply to make your dwm bar look good and functional
+If you use dwm, then you should strictly stick to the inbuilt dwmbar and extend it with patches and stuff. Here are a list of patches you can apply to make your dwm bar look good and functional -
 
 ```
  1. status2d (must)
@@ -316,18 +316,19 @@ good way to display information about your system.
 Here are some of the popular fetch scripts. 
 
 1. [neofetch](https://github.com/dylanaraps/neofetch) - the classic fetch script. also has great support for images.
-2. [pfetch](https://github.com/dylanaraps/pfetch) - a smaller version of neofetch by the same author 
-3. [nitch](https://github.com/ssleert/nitch) - a fetch script written in nim 
-4. [bunnyfetch](https://github.com/Rosettea/bunnyfetch) - cutest fetch ever
+2. [fastfetch](https://github.com/fastfetch-cli/fastfetch) - neofetch written in c instead of bash, makes it significantly more faster. 
+3. [pfetch](https://github.com/dylanaraps/pfetch) - a smaller version of neofetch by the same author. 
+4. [nitch](https://github.com/ssleert/nitch) - a fetch script written in nim.
+5. [bunnyfetch](https://github.com/Rosettea/bunnyfetch) - cutest fetch ever.
 
 ### Other CLI Programs
 
-Here are a list of other cli programs that you might have come by in unixporn screenshots 
-1. [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp) - mpd player with inbuilt visualizer 
-2. [cava](https://github.com/karlstav/cava) - most popular terminal visualizer
-3. [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based matrix implmentation
-4. [cbonsai](https://gitlab.com/jallbrit/cbonsai) - bonsai trees in your terminal 
-5. [tty-clock](https://github.com/xorg62/tty-clock) - clock program
+Here are a list of other cli programs that you might have come by in unixporn screenshots -
+1. [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp) - mpd player with inbuilt visualizer.
+2. [cava](https://github.com/karlstav/cava) - most popular terminal visualizer.
+3. [cmatrix](https://github.com/abishekvashok/cmatrix) - terminal based matrix implmentation.
+4. [cbonsai](https://gitlab.com/jallbrit/cbonsai) - bonsai trees in your terminal .
+5. [tty-clock](https://github.com/xorg62/tty-clock) - clock program.
 
 ### Prompt
 Terminal prompts can massively enhance the look of your terminal. There is a common myth that a temrinal prompt is based on what shell you use. No, you can make your prompt look like anything with any shell. By setting the shell you are basically just editing the `$PS1` environment variable. 
