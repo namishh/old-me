@@ -1,0 +1,78 @@
+---
+title: Why I Use Neovim 
+description: Why I am using neovim and will continue to use it. (and why I can not use other editors)
+date: 8 Mar 2024
+author: Namish Pande
+category: talks
+---
+
+![kodo](https://i.imgur.com/ivD6mq8.png)
+
+So for the past two years, I have been using neovim as my primary text editor. Its fast, comfy and does what I want. But when I talk about it to other people, mostly the feedbacks I get are "being a tryhard", "vscode just works lol and is much better", "vim bindings are available as an extension everywhere". But the main thing is -
+
+## I Don't Use Neovim For the Motions
+
+Yup, I do not. Now the [vim motions](https://www.youtube.com/watch?v=y6VJBeZEDZU) is mostly the reason, people use it. Of course vim motions allow me to get blazingly fast 🚀  while writing [shitty code](/blog/how-to-not-make-quiz) that I will probably regret years later. But the main reason I use it is for the customization. Even after two years, I have not yet been able to learn the motions properly and still sometimes use my mouse in neovim (neovim has good mouse support). The main reason I use neovim is because of its customization options (and the fact that it can run on my ancient hardware laptop).
+
+Good luck trying to _customize_ your _vscode_ with JSON. I am not going to bash on vscode for being electron and resource heavy, I am just limited of hardware resources because I cannot afford anything above a 4gb RAM laptop right now. But the place where neovim absolutely demolishes vscode is customizability.
+
+I do not think their exists any text editor which gives more customization options than neovim. You add the features you want via plugins, or even create them as the neovim api is actually a delight to use (and lua is pretty easy). You decide how you want to display your buffers, you decide what goes into your statusline, you decide how the code completions look. I did not like customizing bufferline and found that most statuslines are very limiting in terms of design choices, so I made my own. I have my own plugin [for using custom colorschemes](https://github.com/chadcat7/prism) . The neovim community is awesome and there are plugins for almost everything you can want. Don't feel comfortable inside terminal? Use [neovide](https://neovide.dev/). 
+
+Now most common counterbacks I will get from the vs<s>bloat</s>code community is one "I am a very **serious** programmer (uses windows) while you just rice your system and make simple web apps, and therefore I use vscode because vim is shitty for big projects", to which I say - [ThePrimeagen](https://www.youtube.com/@ThePrimeagen). The next arguements they will give is by showing extensions which are not currently in neovim. Two most common examples I got were 
+
+1. Thunder Client: Extension that basically add postman into your vscode. They of course have not seen the power of a simple tool called `curl` which is available on all linux devices. I mean what even does Thuner Client basically do. It makes GET / POST / whatever requests you want and gives the output. Well making them is as easy as
+
+```
+curl -s -X POST \
+    'https://jsonplaceholder.typicode.com/posts' \
+    -H 'Content-Type: application/json' \
+    -d '{ "title": "fooBatch", "completed": false, "userId": 1 }' \
+```
+
+I will definitely recommend reading [this](https://maw.sh/blog/no-more-postman-just-curl-and-vim/) as this guy explains it better than I will ever do.
+
+2. Browser Preview: Someone actually said that this is a plus side to vscode. That this extension can open a small browser preview of live html. I mean if you unironically use this plugin, maybe you are becoming a bit too much of a vscode equivalent of emacs fanboy. How hard is it to actually split the screen into half? And for window managers, just open a browser window in the next workspace.
+
+But since my exams are over, I tried some different GUI editors as a change from a _totally unbiased perspective._ I took time to configure each editor to my liking and tried developing my app with each of them.
+
+## Trying Out New Stuff 
+
+### Pulsar
+
+A quick intro about the pulsar editor: It is basically a fork of atom that was introduced when it was sunsetted by Github.
+
+Now I did say, I would not bash on vscode for being an electron and slow app because of my hardware. But oh god pulsar is too slow. The first time I opened it via `dmenu`, I thought dmenu had crashed but lol no. It took 26 seconds for pulsar to open a black screen and 10s for it to show the homepage after that. Now this should clearly have been the signal for uninstalling it right there but I gave it a chance because maybe "I am too used to fast neovim speeds". The only thing pulsar does good at this point is shipping with a good theme and decent looking UI. Apart from that it was too laggy, too slow (I am not even involving LSPs at the moment) and was quiet a headache to work with.
+
+### VS Code
+
+Lol No.
+
+### VS Codium
+
+VSCodium was pretty _okay_. Autocompletions, LSPs, good speeds, Discord RPC to flex, pretty much everything was there that would be reuquired for a beginner. The only time its laggy is on startup and code completions.
+
+The only caveat is very less customization. I cannot change the UI code font, cannot change the UI code size (or the terminal for that matter). Also cthreating custom colorschemes is a pain in vscode. Even after setting all the highlights to specific colors, there still were some keywords that were not being highlighted the correct way.
+
+Pretty good for beginners who just wanna code and have atleast a 8gb RAM rig (too common nowadays).
+
+### Emacs
+
+I unironically used emacs for a good 4 hours before quitting it. I did not even start writing code with it. Customizing emacs is hell. The first thing I thought I would do would be use an custom colorscheme with emacs and I was never able to do it. Then I tried installing some packages. Could not do it. I regret not being religious enough because customizing emacs made me feel like god has forsaken me. Why is there a need of mail clients and all other shit inside a text editor when you cannot even customize it properly. Time for me to mention here the classic emacs joke.
+
+```
+Emacs is a great OS, but it lacks a decent text editor
+```
+
+If I want to do note taking I will most probably default to Obsidian instead of org mode.
+
+### Lite-XL
+
+![lxconf](https://camo.githubusercontent.com/90dee7fba14bff872b4d79946e6dc9e8dd1019fdcc77cab287264c7a9db5a497/68747470733a2f2f692e696d6775722e636f6d2f344b4d757670762e706e67)
+
+This was actually an surprise and a decent editor. It gives you the most control on your editor out of all the GUI editors I mentioned. It has a very unique way of adding plugins in where you add them by downloading them in your `.config/plugins/lite-xl` directory. After playing around it for 4 hours, I had a lite-xl config I was very proud of. LSP works fine, completion works fine, endless customization. It has an lua api which can be used to make own extensions. Very easy to add colorschemes. Only if it had a plugin for vim mode, I may would have switched to it entirely. If a plugin does not support your language, you can modify it as the plugin is just a file in your configuration.  
+
+The only caveat was that the emmet-language-server was laggy beyond control. All the other LSP's worked fine. 8.5/10 development experience.
+
+## Back To Roots
+
+Well I am back to neovim I guess. Maybe I have spend so much time in neovim I will never be comfortable with any other editor (apart from lite-xl, it is good). I would like to say that all of these are my own personal opinions, I am not forcing you to use neovim, and if you got offended by this post even the slightest bit, I would say mission accomplished.
