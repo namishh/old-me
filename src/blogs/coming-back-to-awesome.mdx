@@ -1,0 +1,27 @@
+---
+title: Why I Keep Going Back To Awesomewm
+description: After going through multiple wayland compositors, x window managers, I am finally home again.
+date: 09 May 2024
+author: Namish 
+category: talks
+---
+
+![current rice](https://raw.githubusercontent.com/chadcat7/chadcat7/main/.github/rice.png)
+
+<div align="center">
+current rice (sorry for the flashbang)
+</div>
+<br/>
+It has been almost 2 years since I started [ricing](/blog/ricing). I started out with this generic [rice](https://www.reddit.com/r/unixporn/comments/uithxv/bspwm_hi_absolute_newbie_here_just_started_linux/),  it consisted of a simple polybar, lots of blur and the infamous catppuccin theme. My introduction to linux and my excitement to use linux was because of unixporn. The idea of creating a personalised workspace where you control // tweak every little thing on your desktop was fun.  After that first rice, I have changed window managers frequently. I have used i3, leftwm, was daily driving dwm for a long time, went back to bspwm, back to dwm. I cycled between dwm and bspwm a lot of times but then I was introduced to awesome.....
+
+.... and I just uninstalled it after a couple of hours. And this happened multiple times. My first few attempts at awesome did not go well. It was very difficult for me to understand the default `rc.lua` configuration file. Each time I used to try awesome, I tried to modify the `rc.lua` by copying other repositories and failed miserably. This is where I also feel most of the people back away from awesome, because of its learning curve. It was in the December of 2023 that I took the decision to get into awesome and this time, actually stay with it. To be honest, I took the decision at that time because [EWW](https://github.com/elkowar/eww) was wildly featureless at that time compared to what it is today.
+
+I used awesome for like almost a year straight before going wayland for some time with [hyprland + EWW] and then [swayfx + ags] before I went to awesome once again.
+
+### But why?
+This is a very difficult question to answer because it does not have any hard points to convince you to give awesome a try. At the end, it just boils down to "to my personal preference // bias." Awesome seems very comfortable to use and spending more than a year in it has made me inseperable from it. I might try out new stuff but I will always end up back here. With awesome the possibilities are endless, and the only thing blocking your way is your imagination (and your programming skills).
+
+There might be one solid reason to use awesome. And it is something I will call "All in One". With awesome, you can code in notifications, window swallowing, scratchpads, a bar (and maybe the most advanced bar out there), [even crazy services for that matter to control everything via awesome](https://github.com/Kasper24/KwesomeDE/blob/main/daemons/hardware/bluetooth.lua), directly into the config itself. This eliminates the need of managing other progams like dunst and EWW. EWW's language for defining widgets, is not very "advanced", meaning much of the logic control and stuff like fetching windows, clients or else is done via shell scripts. In awesome, you can do that (still via executing shell commands), but writing services in lua is much more enjoyable than bash.
+
+<br/>
+This was a very short one and only made to appreciate the awesome window manager. I am working on a guide on how to create widgets with awesome, so make sure to check that out as well. Will take some weeks from the date of this post. Thanks for reading! Before I go, I will quickly mention [this guide](https://star.is-a.dev/projects/awmguide/) for those who are keen to use // try out awesome.
