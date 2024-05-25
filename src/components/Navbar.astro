@@ -1,6 +1,8 @@
 ---
+const currentPath = Astro.url.pathname;
 ---
-<div class="z-50 sticky top-0 bg-bg p-4 md:p-8 lg:px-16 w-full md:flex md:items-center md:justify-between">
+<div class="w-full sticky top-8  relative flex justify-center">
+  <div class="z-50   bg-bg p-4 mb-12 lg:mb-4 mx-4 lg:mx-12  md:p-3 lg:px-4 rounded-xl md:w-2/3  w-full lg:w-1/2  bg-mbg/60 backdrop-blur-xl md:flex md:items-center md:justify-between">
       <div class="flex items-center justify-between">
         <a class="flex cursor-pointer items-center" href="/">
           <span class="text-2xl cursor-pointer antialiased font-bold  text-fg">nam</span>
@@ -11,14 +13,15 @@
         </span>
       </div>
       <ul class={`md:flex md:items-center ml-0 z-[-1] md:z-auto navlist list-none hidden sm:visible transition-all duration-400 md-static ms:absolute `}>
-        <li class="mx-0 my-6 md:my-0 md:mx-4" ><a class="text-xl hover:!text-primary  font-medium !text-fg" href="/me" >/me</a></li>
-        <li class="mx-0 my-6 md:my-0 md:mx-4" ><a class="text-xl hover:!text-primary  font-medium !text-fg" href="/blog" >/blog</a></li>
-        <li class="mx-0 my-6 md:my-0 md:mx-4" ><a class="text-xl hover:!text-primary  font-medium !text-fg" href="/poems">/poems</a></li>
-        <li class="mx-0 my-6 md:my-0 md:mx-4"><a class="text-xl hover:!text-primary  font-medium  !text-fg" href="/stuff" >/stuff</a></li>
+        <li class="mx-0 my-6 md:my-0 md:mx-2" ><a class={`text-xl px-3 py-1 rounded-md hover:!text-primary ${currentPath == "/me" ? "md:bg-neutral-800" : "bg-transparent"}  font-medium !text-fg`} href="/me" >/me</a></li>
+        <li class="mx-0 my-6 md:my-0 md:mx-2" ><a class={`text-xl px-3 py-1 rounded-md hover:!text-primary ${currentPath == "/blog" ? "md:bg-neutral-800" : "bg-transparent"}  font-medium !text-fg`} href="/blog" >/blog</a></li>
+        <li class="mx-0 my-6 md:my-0 md:mx-2" ><a class={`text-xl px-3 py-1 rounded-md hover:!text-primary ${currentPath == "/poems" ? "md:bg-neutral-800" : "bg-transparent"}  font-medium !text-fg`} href="/poems" >/poems</a></li>
+        <li class="mx-0 my-6 md:my-0 md:mx-2" ><a class={`text-xl px-3 py-1 rounded-md hover:!text-primary ${currentPath == "/stuff" ? "md:bg-neutral-800" : "bg-transparent"}  font-medium !text-fg`} href="/stuff" >/stuff</a></li>
         <span class="flex gap-4 lg:gap-0">
           <li class="mx-0 my-2 md:my-0 md:mx-4"><a class="text-xl hover:!text-primary  font-medium  !text-fg" href="https://github.com/chadcat7"><i class="ph-fill ph-github-logo"></i></a></li>
         </span>
       </ul>
+</div>
 </div>
 <script>
   const navlist = document.querySelector(".navlist")
