@@ -1,8 +1,8 @@
 ---
-const { posts } = Astro.props;
+const { posts, l } = Astro.props;
 ---
 {posts.map((post,index) => {
-const href = `/blog/${post.file.split("/").pop().split(".").shift()}`;
+const href = `/${l}/${post.file.split("/").pop().split(".").shift()}`;
 return <div>
     <a href={href} class="cursor-pointer flex flex-col gap-3 flex flex-col items-start">
           <div class="lg:px-0 lg:py-2 md:px-12 px-8 py-4 flex flex-col items-start">
