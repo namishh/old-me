@@ -1,34 +1,37 @@
 ---
 import Layout from "../../layouts/Layout.astro"
-
+import List from "../../components/List.astro"
 let allPosts = await Astro.glob("../../poems/*.mdx");
 let arr = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.date).valueOf() -
     new Date(a.frontmatter.date).valueOf()
-);
+    );
+let postsByYear = arr.reduce((acc, post) => {
+  const year = new Date(post.frontmatter.date).getFullYear();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+  }, {});
+let keys = Object.keys(postsByYear).reverse()
 ---
-<Layout title="Poems" description="List Of Archives">
+<Layout title="Poems" description="My Poems">
   <div class="div w-screen ">
     <div class="flex justify-center items-center gap-2 lg:gap-0">
       <div class="w-full md:w-2/3 lg:w-1/2 p-2">
         <div class="text-slate-950  p-2 md:p-8 lg:p-8 flex justify-start flex-col gap-8 md:gap-4">
           <ul class="flex flex-wrap w-full">
-            {arr.map((item, index) => {
-        const href = `/poems/${item.file.split("/").pop().split(".").shift()}`;
-        return <a href={href} class="cursor-pointer flex flex-col gap-3 flex flex-col items-start">
-          <div class="lg:px-16 lg:py-2 md:px-12 px-8 py-4 flex flex-col items-start">
-                  <div class="flex flex-wrap items-center gap-2 md:gap-4">
-                    <h2 class="sm:text-2xl text-2xl font-bold text-fg mt-4 mb-4"><span class="text-fg font-sans mr-2 font-bold text-primary">{index + 1}.</span>{item.frontmatter.title}</h2>
-
-                    <div class="flex items-center gap-2 md:gap-4">
-                    <p class="leading-relaxed flex-end text-md text-fg">{item.frontmatter.date}</p>
-                    </div>
-                  </div>
-                  <p class="leading-relaxed text-bright mb-4 text-lg text-bright">{item.frontmatter.description}</p>
+            {keys.map(i => {
+            return <div>
+                <h1 class="lg:px-0 px-8 text-3xl md:text-5xl font-bold text-fg">{i}</h1>
+                <div class="lg:px-0 px-8">
+      <div class="mt-3 h-[2px] px-32 bg-bg3 inline-block"></div>
                 </div>
-                </a>
-                })}
+              <List posts={postsByYear[i]}></List> 
+            </div>
+            })}
           </ul>
         </div>
       </div>
@@ -36,5 +39,6 @@ let arr = allPosts.sort(
   </div >
   </div>
 </Layout>
-<style>
-</style>
+<script>
+</script>
+
