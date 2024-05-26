@@ -7,7 +7,7 @@ import remarkMath from 'remark-math';
 import react from "@astrojs/react";
 
 export default defineConfig({
-  site: 'https://chadcat7.github.io',
+  site: 'https://nam.is-a.dev',
   integrations: [tailwind(), mdx({
     syntaxHighlight: 'shiki',
     shikiConfig: {
