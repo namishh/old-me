@@ -9,7 +9,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: 'https://chadcat7.github.io',
   base: '/',
-  trailingSlash: "never",
   integrations: [tailwind(), mdx({
     syntaxHighlight: 'shiki',
     shikiConfig: {
