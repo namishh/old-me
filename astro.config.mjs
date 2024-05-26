@@ -7,7 +7,7 @@ import remarkMath from 'remark-math';
 import react from "@astrojs/react";
 
 export default defineConfig({
-  site: 'https://nam.is-a.dev',
+  site: 'https://chadcat7.github.io',
   base: '/',
   trailingSlash: "never",
   integrations: [tailwind(), mdx({
