@@ -23,7 +23,8 @@ const currentPath = Astro.url.pathname;
       </ul>
 </div>
 </div>
-<script>
+<script define:vars={{ currentPath }}>
+  console.log(currentPath)
   const navlist = document.querySelector(".navlist")
   const toggler = document.querySelector(".toggler")
   toggler.addEventListener("click", () => {
