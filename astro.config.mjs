@@ -8,6 +8,8 @@ import react from "@astrojs/react";
 
 export default defineConfig({
   site: 'https://nam.is-a.dev',
+  base: '/',
+  trailingSlash: "never",
   integrations: [tailwind(), mdx({
     syntaxHighlight: 'shiki',
     shikiConfig: {
