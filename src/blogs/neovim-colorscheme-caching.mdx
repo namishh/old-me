@@ -13,7 +13,8 @@ category: talks
 
 I have always implemented my own way of having colorschemes, earlier I used to do something like this
 
-~~~lua
+```lua 
+// hightlights.lua 
 local highlights = require('themes.highlights')
 
 local function setup(opts)
@@ -23,7 +24,7 @@ local function setup(opts)
 end
 
 return { setup = setup }
-~~~
+```
 
 The main thing here is the line `local colors = require('themes.colorschemes.' .. opts.theme).get_colors()`. Observe that we have to `require` the theme file everytime. Instead of doing this everytime we can compile the colors into a cache file so that it can be called faster the next time. This is what we will try to implement in this blog. At the end I will also teach you how to make a custom telescope prompt for selecting your custom themes
 
@@ -35,6 +36,7 @@ In this setup we will create some files required for this. Make a directory `.co
 ### init.lua
 
 ```lua
+// init.lua
 vim.g.currentTheme = "onedark"
 
 local M = {}
@@ -99,6 +101,7 @@ end
 let us make a file at `lua/themes/schemes/onedark.lua`
 
 ```lua 
+// themes/schemes/onedark.lua
 local M = {}
 
 function M.get_colors()
@@ -144,6 +147,7 @@ to get more colorschemes, check out my [repo](https://github.com/chadcat7/kodo/t
 for highlights, we will create folder `lua/themes/hls`. In later sections, we will create a function that will loop through all the files in the repo, so you can name files in it however you want. But each file should return a table with highlights. For example for the dashboard \- 
 
 ```lua 
+// themes/hls/alpha.lua
 local themes = require("themes")
 local colors = themes.getCurrentTheme()
 
@@ -164,6 +168,8 @@ Instead of manually typing out all the highlights, get them all from [here](http
 now let us actually start implementing what we were here for, `colorscheme caching`. All of this code is in `themes/init.lua`
 
 ```lua 
+// themes/init.lua 
+
 -- simple helper functions
 M.mergeTb         = function(...)
   return vim.tbl_deep_extend("force", ...)
@@ -186,6 +192,7 @@ Explaination:
 this function creates the cache and saves the file at `~/.local/share/nvim/colors_data/`
 
 ```lua 
+// themes/init.lua 
 
 vim.g.theme_cache = vim.fn.stdpath "data" .. "/colors_data/"
 
@@ -229,6 +236,7 @@ Explaination:
 ### applying
 
 ```lua
+// themes/init.lua 
 local hl_files = vim.fn.stdpath "config" .. "/lua/themes/hls"
 
 M.compile         = function()
@@ -263,6 +271,7 @@ This is it basically, now the
 create a file `~/.config/nvim/colors/onedark.lua`
 
 ```lua
+// colors/onedark.lua
 vim.g.currentTheme = "onedark"
 require("plenary.reload").reload_module "themes"
 require("themes").load()
@@ -279,6 +288,7 @@ and now just run this command:
 now if you have multiple schemes in `themes/schemes`, we can create a telescope picker for just them. For this you will first need to install [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 
 ```lua
+// themes/picker.lua 
 local pickers      = require "telescope.pickers"
 local finders      = require "telescope.finders"
 local actions      = require "telescope.actions"
