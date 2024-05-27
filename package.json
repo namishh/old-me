@@ -24,7 +24,6 @@
     "react-dom": "^18.2.0",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
-    "remark-mdx-code-meta": "^2.0.0",
     "tailwind": "^4.0.0",
     "typescript": "^5.2.2"
   },

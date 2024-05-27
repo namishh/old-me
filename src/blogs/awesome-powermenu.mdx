@@ -26,7 +26,7 @@ category: tutorial
 This tutorial requires `awesome-git` and `imagemagick`. I am using [nixos](https://nixos.org) and if you use it too, you can install it via [nixpkgs-f2k](https://github.com/fortuneteller2k/nixpkgs-f2k). 
 + make a `helpers.lua` file with these functions
 
-```lua
+```lua title="helpers.lua"
 local helpers        = {}
 local gears          = require("gears")
 
@@ -48,9 +48,9 @@ end
 return helpers
 ```
 
-+ have these in your `theme.lua` file
++ have these in your `theme/init.lua` file
 
-```lua
+```lua title="theme/init.lua"
 local gfs                = require("gears.filesystem")
 local theme_path         = gfs.get_configuration_dir() .. "/theme/"
 
@@ -68,7 +68,7 @@ theme.scrwidth           = 1920
 So let us start without wasting any more time.
 You need some libraries to implement this. Add this on the top of your file:
 
-```lua
+```lua title="powermenu.lua"
 local awful           = require("awful")
 local wibox           = require("wibox")
 local beautiful       = require("beautiful")
@@ -104,7 +104,7 @@ awful.spawn.with_shell("firefox")
 
 Now that we have learned the basics of signals and spawn we can define our commands
 
-```lua
+```lua title="powermenu.lua"
 local powerofficon    = "󰐥"
 local rebooticon      = "󰦛"
 local suspendicon     = "󰤄"
@@ -142,7 +142,7 @@ end
 
 wibox is simple UI element in awesomewm that can be turned into anything you want. for now we want it to be a widget
 
-```lua
+```lua title="powermenu.lua"
 awful.screen.connect_for_each_screen(function(s)
   local exit = wibox({
     screen = s,
@@ -187,7 +187,7 @@ At the end you will see that I have used signals again. This time they are being
 
 To make this work with a keybind add this to your keybind files<br/>
 
-```lua
+```lua title="binds.lua"
   awful.key {
     modifiers   = { mod.super },
     key         = 'x',
@@ -202,7 +202,7 @@ To make this work with a keybind add this to your keybind files<br/>
 ## Creating the elements
 To create widgets that we will add to our main wibox, we use `wibox.widget`. To make a button to close and open, we use:
 
-```lua
+```lua title="powermenu.lua"
 local close = wibox.widget {
   {
     align = 'center',
@@ -238,7 +238,7 @@ This is used to add mouse interactions. The 2nd argument specifies what type of 
 
 Now instead of create 5 `wibox.widgets`, we can create one function to make them for us
 
-```lua
+```lua title="powermenu.lua"
 local createButton    = function(icon, cmd, name)
   local button = wibox.widget {
     {
@@ -284,7 +284,7 @@ local exitbutton = createButton(exiticon, exitcommand, "Exit")
 
 Now we can add all of our elements in a single big element
 
-```lua
+```lua title="powermenu.lua"
 local box = wibox.widget {
   {
     {
@@ -353,7 +353,7 @@ local box = wibox.widget {
 
 to make this structure a bit less confusing here what is actually happening
 
-```
+```txt title="Layout"
 margin >> vertical layout
 |    -place widget to place in center
 |    |    -vertical layout
@@ -372,7 +372,7 @@ margin >> vertical layout
 ## Adding the background image
 This is where `imagemagick` comes into play. But first we will have to make a widget for it
 
-```lua
+```lua title="powermenu.lua"
 local back = wibox.widget {
     id = "bg",
     widget = wibox.widget.imagebox,
@@ -385,7 +385,7 @@ local back = wibox.widget {
 
 Now we will execute a command with `awful.spawn.easy_async_with_shell` to use `imagemagick` to convert our wallpaper into a blurred image. `easy_async_with_shell` will help us set the background image after the image has been converted
 
-```lua
+```lua title="powermenu.lua"
 local makeImage = function()
   os.execute("mkdir -p ~/.cache/awesome/blur/")
   local cmd = 'convert ' ..
@@ -402,7 +402,7 @@ makeImage()
 
 now we can update the `exit:setup` to be:
 
-```lua
+```lua title="powermenu.lua"
 exit:setup {
   back,
   {
@@ -426,7 +426,7 @@ the `wibox.layout.stack` allows widget to be placed on top of each other
 
 to listen for keypresses we can use the `awful.keygrabber()`. This will help us to execute the comands without using mouse.
 
-```lua
+```lua title="powermenu.lua"
 local exit_screen_grabber = awful.keygrabber({
   auto_start = true,
   stop_event = "release",
@@ -453,7 +453,7 @@ as we want it start right after opening our widget we set the `auto_start` to `t
 ### Controlling the keygrabber
 To start and end the keygrabber, we can edit the toggle signals as follows:
 
-```lua
+```lua title="powermenu.lua"
   awesome.connect_signal("toggle::exit", function()
     if exit.visible then
       exit_screen_grabber:stop()
@@ -477,7 +477,7 @@ To start and end the keygrabber, we can edit the toggle signals as follows:
 
 And we are done! Congratulations on making it this far! This is the full code
 
-```lua
+```lua title="powermenu.lua"
 local awful           = require("awful")
 local wibox           = require("wibox")
 local beautiful       = require("beautiful")
@@ -727,6 +727,6 @@ end)
 
 And now to make it work, you can require the whole thing in your main file
 
-```lua
-require("ui.exitscreen") -- or whatever your path is
+```lua title="rc.lua"
+require("ui.powermenu") -- or whatever your path is
 ```
