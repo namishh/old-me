@@ -1,0 +1,63 @@
+---
+title: The Learning Rust Experience 
+description: My part 1 of ???? of learning rust as an js/ts andy.
+date: 28 May 2024
+author: Namish 
+category: talks
+---
+
+![rust code](/rust-1.png)
+
+So I have been programming as a hobby for 5 years now, and most of it has been web dev. I have done React, Vue, React's metaframeworks like Next, Remix and a lot more and quiet frankly I have become tired of it. I have always wanted to try something new and exciting. And for a lot of time I wanted to into game development. I quicky realised that it is not for me given my low level pc. So I tried getting into low level languages, and thought of starting with rust.
+
+### First Expressions
+
+A general experience of mine with programming languages has been that "if you learn 1 it should not be hard to get into others", and to some extent, I agree with it. I learnt python first, and transitioning into javacsript was very easy and transitioning into golang was smooth as well. Unfortunately I cannot say the same about Rust.
+
+Let us take a look at this code for initialising a discord bot with [serenity](https://github.com/serenity-rs/serenity) and [poise](https://github.com/serenity-rs/poise).
+
+```rust title="hello.rs"
+    let framework = poise::Framework::<Data, Error>::builder()
+        .options(poise::FrameworkOptions {
+            commands: commands::get_commands(),
+            manual_cooldowns: true,
+            prefix_options: poise::PrefixFrameworkOptions {
+                prefix: Some("?c".into()),
+                case_insensitive_commands: true,
+                ..Default::default()
+            },
+            ..Default::default()
+        })
+        .setup(|ctx, _ready, framework| {
+            Box::pin(async move {
+                builtins::register_globally(ctx, &framework.options().commands).await?;
+                ctx.data
+                    .write()
+                    .await
+                    .insert::<MongoClientKey>(Arc::clone(&mongo_arc));
+                Ok(Data {
+                    mongo: Arc::clone(&mongo_arc),
+                })
+            })
+        })
+        .build();
+```
+
+If I would have seen this code without knowing anything about Rust, I would have lost my mind completely. Box, Arc, move, Ok, insane usage of < > and ampersand made me kinda scared.Rust, being a strongly typed language, generally does not allow you to loosely type anything. You are not allowed to print everything, most things do not have a implementation for println!. When starting out, rust can seem kinda hellish. And this was the first insantce in a very long time that I was motivated to learn something new.
+
+### Thoughts
+
+The first project I made with rust was [this fetch script](https://github.com/chadcat7/fetch.rs). It was a great introductory project for me. Learnt a lot about the basics and some built in stuff.
+Next I built a discord bot that can be used to host quizes called [linear](https://github.com/chadcat7/linear). I would like to take the moment to appreciate the work of serenity team on [poise](https://github.com/serenity-rs/poise), it has a lot of stuff baked in and makes bots easier to maintain. That being said, it was still tough to make a bot like this, mostly because of the code snippet I shared above. I also used mongodb to save data, so I learnt a thing or two about that as well.
+
+I think its package manager, `cargo` is very clean and easy to use as well. Most of its basic functionalities mimic npm but I felt like cargo is a bit less buggier.
+
+```bash
+$ cargo add package
+$ npm i package
+```
+
+
+Most of the errors I have run into with rust, is mostly because of mismatched types. And that sometimes get very infuriating to work with. Said that, I am enjoying writing Rust. Working with Some and Result is cool, there are a huge variety of functionalities and utilities baked in and the only thing that is left to you is to make sure you do not upset the borrow checker.
+
+Currently I am working on key value database in rust and I think I will continue to use rust consistently for the next couple of years.
