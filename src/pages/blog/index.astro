@@ -7,7 +7,7 @@ let arr = allPosts.sort(
     new Date(b.frontmatter.date).valueOf() -
     new Date(a.frontmatter.date).valueOf()
     );
-let postsByYear = arr.reduce((acc, post) => {
+    let postsByYear = arr.reduce((acc, post) => {
   const year = new Date(post.frontmatter.date).getFullYear();
   if (!acc[year]) {
     acc[year] = [];
