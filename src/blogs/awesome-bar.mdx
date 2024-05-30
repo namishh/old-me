@@ -37,10 +37,8 @@ theme.wallpaper = gears.filesystem.get_configuration_dir() .. 'theme/wall.jpg'
 beautiful.init(gears.filesystem.get_themes_dir() .. 'default/theme.lua')
 beautiful.init(theme)
 ```
-<br/>
 
 4. Add in colors, fonts and some gaps
-<br/>
 ```lua title="theme/init.lua" add={2-18}
 local theme       = {}
 
@@ -56,15 +54,13 @@ theme.red         = "#ab4642"
 theme.blue        = "#7cafc2"
 theme.green       = "#a1b56c"
 theme.yellow      = "#f7ca88"
-theme.magenta     = "#8baf"
+theme.magenta     = "#ba8baf"
 theme.cyan        = "#86c1b9"
 
 theme.useless_gap = 5
 ```
-<br/>
 
 5. Create a helpers.lua file 
-<br/>
 ```lua title="helpers.lua"
 local beautiful      = require("beautiful")
 local gears          = require("gears")
@@ -97,7 +93,6 @@ end
 
 return helpers
 ```
-<br/>
 
 And now if you will restart awm, you will get something bland and tiny like this 
 
@@ -125,7 +120,7 @@ First lets remove everything from bar and delete every file in ui/wibar/module e
    s.mywibox = awful.wibar({
       position = 'top',
       height   = 50,
-      width    = 1920,
+    -- width    = 1920, -- it will automatically strech
       screen   = s,
       widget   = {
          layout = wibox.layout.align.horizontal,
@@ -923,3 +918,7 @@ Restart the WM and you get some rather good looking titlebars! And your basic tu
 
 This could be a series but these are very time consuming and energy draining tasks. But it could be one series.
 Thanks for reading this, I hope it made your awesome journey easier.
+
+## Credits 
+1. [gw](https://github.com/Gwynsav) for their starter config. (give him a follow, great guy) 
+2. naina_ on unixporn discord from whom this rice is loosely copied.
