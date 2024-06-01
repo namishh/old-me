@@ -8,7 +8,7 @@ const posts = await Astro.glob("../../blogs/*.mdx");
   }));
   }
 
-const { Content, frontmatter } = Astro.props.post;
+const { Content, frontmatter  } = Astro.props.post;
 const { title, description, date, author } = frontmatter;
 ---
 <Layout title={title} description={description}>

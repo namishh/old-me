@@ -6,6 +6,8 @@ author: Namish
 draft: false
 category: guide 
 ---
+import Callout from  "../components/Callout.astro"
+
 ![freosan](/freosan.png)
 <br/>
 
@@ -42,7 +44,9 @@ Ricing, a term commonly used for making your boring ass linux desktop into a tre
 
 So before we begin here is a small disclaimer
 
-<div class="p-4 my-8 bg-darker rounded-lg border-l-disabled border-l-4 font-mono">This is not a **STEP BY STEP TUTORIAL** on how to rice. This is a _GUIDE_ and only aims to assist you.</div>
+<Callout type="warning"> 
+This is not a **STEP BY STEP TUTORIAL** on how to rice. This is a _GUIDE_ and only aims to assist you.
+</Callout>
 
 ## Choosing A Window Manager
 First, what is a window manager? In contrast to a DE, which provides a whole user experience with panels, taskbars, systrays, desktop icons, menus and stuff, windows managers usually just come with the ability to do basic window operations such as moving, resizing, and minimizing // maximizing (except one). Now I assuming you know what display protocols are and what is the difference between `Wayland` and `Xorg // X11`. If you do not, I would suggest you to [read this](https://www.howtogeek.com/900698/what-is-wayland-on-linux-and-how-is-it-different-from-x/). In wayland, a window manager if referred to as a `wayland compositor` or just `compositor` in short. Now here are the different WMs / compositors you can choose as an beginner.
@@ -63,7 +67,9 @@ First, what is a window manager? In contrast to a DE, which provides a whole use
 
 - [swayfx](https://github.com/WillPower3309/swayfx): A fork of sway but much better. Sway is just a pure [i3](https://i3wm.org) replacement for wayland. But sway never adds any extra feature on their own, they just do what i3 does. Swayfx is a fork that adds eyecandy such as rounded-corners that are anti aliased, blurring, shadows, dimming of unfocused windows, **per application saturation control** and possible fade and window animations.
 
-<div class="p-4 my-8 bg-darker rounded-lg border-l-warn border-l-4 font-mono">These are just my recommendations for beginners, there are many other compositors/wms available and you are free to use those.</div>
+<Callout type="info"> 
+These are just my recommendations for beginners, there are many other compositors/wms available and you are free to use those.
+</Callout>
 
 ## Terminals
 Almost any temrminal can look good with your rice. It does not really matter but here are my only two recommendations for a terminal emulator if you ever feel confused.
