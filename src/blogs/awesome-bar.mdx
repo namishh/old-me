@@ -19,9 +19,10 @@ This guide will mostly about awm's widgeting system, if you wanna learn about ot
 
 ### Quick Setup
 
-1. First remove the default rc.lua and replace it with this [modularized config](https://github.com/Gwynsav/modular-awm-default).
-2. Add your wallpaper to theme/wall.jpg
-3. Edit the contents of theme/init.lua 
+1. Ensure you are using awesome-git.
+2. First remove the default rc.lua and replace it with this [modularized config](https://github.com/Gwynsav/modular-awm-default).
+3. Add your wallpaper to theme/wall.jpg
+4. Edit the contents of theme/init.lua 
 
 <br/>
 ```lua title="theme/init.lua" del={10} add={6-7,11}
@@ -321,7 +322,7 @@ gears.timer {
   timeout   = 2,
   call_now  = true,
   autostart = true,
-  callck  = function()
+  callback  = function()
     emit_network_status()
   end
 }
@@ -347,7 +348,7 @@ gears.timer {
   timeout   = 2,
   call_now  = true,
   autostart = true,
-  callck  = function()
+  callback  = function()
     emit_bluetooth_status()
   end
 }
@@ -485,7 +486,7 @@ gears.timer {
   timeout   = 20,
   call_now  = true,
   autostart = true,
-  callck  = function()
+  callback  = function()
     battery_emit()
   end
 }
@@ -509,7 +510,7 @@ gears.timer {
   timeout   = 1,
   call_now  = true,
   autostart = true,
-  callck  = function()
+  callback  = function()
     volume_emit()
   end
 }
