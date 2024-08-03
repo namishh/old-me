@@ -9,7 +9,7 @@ import { pluginFrames } from 'astro-expressive-code';
 import { pluginTextMarkers } from 'astro-expressive-code';
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://chadcat7.github.io',
+  site: 'https://namishh.github.io',
   base: '/',
   markdown: {
     remarkPlugins: [remarkMath],

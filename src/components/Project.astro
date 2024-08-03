@@ -1,18 +1,29 @@
 ---
 const { tech, desc, name } = Astro.props;
 ---
-<div class="card w-full md:w-1/2 lg:w-1/2 self-stretch	">
-    <a class="cursor-pointer flex flex-col gap-3 md:p-2 p-2 h-full " href={`https://github.com/chadcat7/${name}`}>
-        <div class="border-2 border-neutral-800 lg:px-8 lg:py-6 md:px-4 px-4 py-4  bg-[#0e0e0e] rounded-lg" >
-        <div class="flex items-center flex-wrap gap-4">
-        <p class="font-bold text-2xl text-primary ">{name}</p>
-        <div class="flex gap-4 flex-wrap self-center">
-          {tech.map(i => <span class='bg-[#1a1a1a] border-2 border-neutral-800 text-sm py-2  text-fg px-4 font-mono rounded-md'>{i.name}</span>)}
-        </div>
-        </div>
-        <p class="font-light mt-4 leading-6 text-fg">{desc}</p>
+
+<div class="card w-full md:w-1/2 lg:w-1/2 self-stretch">
+    <a
+        class="cursor-pointer flex flex-col gap-3 md:p-2 p-2 h-full"
+        href={`https://github.com/namishh/${name}`}
+    >
+        <div
+            class="border-2 border-neutral-800 lg:px-8 lg:py-6 md:px-4 px-4 py-4 bg-[#0e0e0e] rounded-lg"
+        >
+            <div class="flex items-center flex-wrap gap-4">
+                <p class="font-bold text-2xl text-primary">{name}</p>
+                <div class="flex gap-4 flex-wrap self-center">
+                    {
+                        tech.map((i) => (
+                            <span class="bg-[#1a1a1a] border-2 border-neutral-800 text-sm py-2  text-fg px-4 font-mono rounded-md">
+                                {i.name}
+                            </span>
+                        ))
+                    }
+                </div>
+            </div>
+            <p class="font-light mt-4 leading-6 text-fg">{desc}</p>
         </div>
     </a>
 </div>
-<style>
-</style>
+<style></style>
