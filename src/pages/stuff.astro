@@ -81,6 +81,22 @@ const showoff = [
         tech: [{ name: "c", color: "bg-blue-300" }],
     },
     {
+        name: "techfestweb",
+        desc: "a beautiful, modern, sleek and responsive website template for techfests",
+        tech: [
+            { name: "remix", color: "bg-teal-300" },
+            { name: "tailwind", color: "bg-blue-300" },
+        ],
+    },
+];
+
+const decent = [
+    {
+        name: "namishh.github.io",
+        desc: "basically the blog you're seeing rn. rewritten with astro and tailwind",
+        tech: [{ name: "astro", color: "bg-teal-300" }],
+    },
+    {
         name: "kinben",
         desc: "a personal dashboard, lofi player, pomodoro timer and a kanban board",
         tech: [
@@ -89,11 +105,19 @@ const showoff = [
         ],
     },
     {
-        name: "techfestweb",
-        desc: "a beautiful, modern, sleek and responsive website template for techfests",
+        name: "silxx",
+        desc: "beautiful concept website made for school event",
         tech: [
-            { name: "remix", color: "bg-teal-300" },
+            { name: "astro", color: "bg-teal-300" },
             { name: "tailwind", color: "bg-blue-300" },
+        ],
+    },
+    {
+        name: "crypt",
+        desc: "simple crypt hunt website made for learning actual back end development",
+        tech: [
+            { name: "next", color: "bg-teal-300" },
+            { name: "express", color: "bg-blue-300" },
         ],
     },
     {
@@ -103,11 +127,6 @@ const showoff = [
             { name: "react", color: "bg-teal-300" },
             { name: "tailwind", color: "bg-blue-300" },
         ],
-    },
-    {
-        name: "chadcat7.github.io",
-        desc: "basically the blog you're seeing rn. rewritten with astro and tailwind",
-        tech: [{ name: "astro", color: "bg-teal-300" }],
     },
     {
         name: "bubble",
@@ -164,22 +183,6 @@ const meh = [
         tech: [{ name: "rust", color: "bg-blue-300" }],
     },
     {
-        name: "silxx",
-        desc: "beautiful concept website made for school event",
-        tech: [
-            { name: "astro", color: "bg-teal-300" },
-            { name: "tailwind", color: "bg-blue-300" },
-        ],
-    },
-    {
-        name: "crypt",
-        desc: "simple crypt hunt website made for learning actual back end development",
-        tech: [
-            { name: "next", color: "bg-teal-300" },
-            { name: "express", color: "bg-blue-300" },
-        ],
-    },
-    {
         name: "photomena",
         desc: "barebones image editor powered by opencv, number and tkinter",
         tech: [{ name: "python", color: "bg-blue-300" }],
@@ -227,11 +230,25 @@ const meh = [
             <h1
                 class="text-2xl sm:text-3xl font-bold ms:my-8 my-2 mb-4 px-8 text-gray-500 text-center sm:text-left"
             >
-                Show <span class="text-fg">Off</span>
+                Good <span class="text-fg">Ones</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
                     showoff.map((i) => (
+                        <Project name={i.name} desc={i.desc} tech={i.tech} />
+                    ))
+                }
+            </div>
+        </section>
+        <section class="flex flex-col items-center justify-center w-full">
+            <h1
+                class="text-2xl sm:text-3xl font-bold ms:my-8 my-2 mb-4 px-8 text-gray-500 text-center sm:text-left"
+            >
+                Decent <span class="text-fg">Projects</span>
+            </h1>
+            <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
+                {
+                    decent.map((i) => (
                         <Project name={i.name} desc={i.desc} tech={i.tech} />
                     ))
                 }
