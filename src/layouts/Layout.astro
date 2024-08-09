@@ -42,14 +42,11 @@ const { title, description } = Astro.props;
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-            integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
-            crossorigin="anonymous"
+        <meta name="generator" content={Astro.generator} />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
         />
-        <meta name="generator" content={Astro.generator} /> 
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** ">
         <title>{title}</title>
     </head>
     <body class="bg-bg overflow-x-hidden">
