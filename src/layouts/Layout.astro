@@ -48,7 +48,8 @@ const { title, description } = Astro.props;
             integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
             crossorigin="anonymous"
         />
-        <meta name="generator" content={Astro.generator} />
+        <meta name="generator" content={Astro.generator} /> 
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** ">
         <title>{title}</title>
     </head>
     <body class="bg-bg overflow-x-hidden">
