@@ -52,63 +52,77 @@ const { title, description } = Astro.props;
     <body class="bg-bg overflow-x-hidden">
         <Navbar />
         <slot />
+        <div class="flex w-full my-4 justify-center">
+            <div
+                class="md:w-2/3 text-fg py-4 px-4 md:px-6 w-full flex flex-col sm:flex-row items-center justify-between lg:w-1/2"
+            >
+                <p>( っ˶´ ˘ `)っ made out of boredom and ❤️ by Namish</p>
+                <p>
+                    made with <a
+                        href="https://astro.build"
+                        target="_blank"
+                        class="underline">astro</a
+                    >
+                </p>
+            </div>
+        </div>
     </body>
+    <style is:global>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Product Sans;
+        }
+        *::-webkit-scrollbar {
+            width: 15px;
+            background: #090909;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #222;
+            border-radius: 3px;
+        }
+
+        .serif {
+            font-family: "Bree Serif";
+        }
+        @font-face {
+            font-family: "Product Sans";
+            src: url("/fonts/ProductSans-Regular.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Product Sans Light";
+            src: url("/fonts/ProductSans-Light.ttf") format("truetype");
+            font-weight: lighter;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Iosevka";
+            src: url("/fonts/Iosevka.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /*   :root { */
+        /*     --astro-code-color-text: #dee1e6; */
+        /*     --astro-code-color-background: #060606; */
+        /*     --astro-code-token-constant: #d466e9; */
+        /*     --astro-code-token-string: #56966e; */
+        /*     --astro-code-token-comment: #485263; */
+        /*     --astro-code-token-keyword: #c14d53; */
+        /*     --astro-code-token-parameter: #c14d53; */
+        /*     --astro-code-token-function: #6a9f98; */
+        /*     --astro-code-token-string-expression: #56966e; */
+        /*     --astro-code-token-punctuation: #dee1e6; */
+        /*     --astro-code-token-link: #dee1e6; */
+        /* } */
+    </style>
 </html>
-<style is:global>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: Product Sans;
-    }
-    *::-webkit-scrollbar {
-        width: 15px;
-        background: #090909;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        background-color: #222;
-        border-radius: 3px;
-    }
-
-    .serif {
-        font-family: "Bree Serif";
-    }
-    @font-face {
-        font-family: "Product Sans";
-        src: url("/fonts/ProductSans-Regular.ttf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: "Product Sans Light";
-        src: url("/fonts/ProductSans-Light.ttf") format("truetype");
-        font-weight: lighter;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: "Iosevka";
-        src: url("/fonts/Iosevka.ttf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    /*   :root { */
-    /*     --astro-code-color-text: #dee1e6; */
-    /*     --astro-code-color-background: #060606; */
-    /*     --astro-code-token-constant: #d466e9; */
-    /*     --astro-code-token-string: #56966e; */
-    /*     --astro-code-token-comment: #485263; */
-    /*     --astro-code-token-keyword: #c14d53; */
-    /*     --astro-code-token-parameter: #c14d53; */
-    /*     --astro-code-token-function: #6a9f98; */
-    /*     --astro-code-token-string-expression: #56966e; */
-    /*     --astro-code-token-punctuation: #dee1e6; */
-    /*     --astro-code-token-link: #dee1e6; */
-    /* } */
-</style>
