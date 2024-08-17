@@ -17,12 +17,12 @@ export default {
     },
     extend: {
       colors: {
-        'darker': "#040404",
-        'bg': "#060606",
-        'mbg': "#131313",
-        "bg3": "#272727",
-        'fg': "#dfdddd",
-        'bright': "#ADA9A9",
+        'darker': "#020202",
+        'bg': "#000",
+        'mbg': "#090909",
+        "bg3": "#181818",
+        'fg': "#efeeee",
+        'bright': "#bab8b8",
         'error': "#c14d53",
         'success': "#56966e",
         'warn': "#e1956c",
