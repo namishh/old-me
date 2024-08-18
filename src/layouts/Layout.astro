@@ -54,14 +54,14 @@ const { title, description } = Astro.props;
         <slot />
         <div class="flex w-full my-4 justify-center">
             <div
-                class="md:w-2/3 text-fg py-4 px-4 md:px-6 w-full flex flex-col sm:flex-row items-center justify-between lg:w-1/2"
+                class="md:w-2/3 text-bright py-4 px-4 md:px-6 w-full flex flex-col sm:flex-row items-center justify-between lg:w-1/2"
             >
-                <p>( っ˶´ ˘ `)っ made out of boredom and ❤️ by Namish</p>
+                <p>( っ˶´ ˘ `)っ made out of boredom and ❤️ by nam</p>
                 <p>
                     made with <a
                         href="https://astro.build"
                         target="_blank"
-                        class="underline">astro</a
+                        class="underline text-fg">astro</a
                     >
                 </p>
             </div>
@@ -72,7 +72,7 @@ const { title, description } = Astro.props;
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family: Product Sans;
+            font-family: Geist;
         }
         *::-webkit-scrollbar {
             width: 15px;
@@ -84,20 +84,17 @@ const { title, description } = Astro.props;
             border-radius: 3px;
         }
 
-        .serif {
-            font-family: "Bree Serif";
-        }
         @font-face {
-            font-family: "Product Sans";
-            src: url("/fonts/ProductSans-Regular.ttf") format("truetype");
+            font-family: "Geist";
+            src: url("/fonts/Geist-Regular.ttf") format("truetype");
             font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: "Product Sans Light";
-            src: url("/fonts/ProductSans-Light.ttf") format("truetype");
+            font-family: "Geist Light";
+            src: url("/fonts/Geist-Light.ttf") format("truetype");
             font-weight: lighter;
             font-style: normal;
             font-display: swap;

@@ -21,7 +21,7 @@ export default defineConfig({
       styleOverrides: {
         codeFontFamily: "Iosevka Nerd Font",
         codeFontSize: "16px",
-        uiFontFamily: "Product Sans",
+        uiFontFamily: "Geist",
         uiFontSize: "15px",
         codeLineHeight: "1.75",
       },
