@@ -3,7 +3,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <div
-    class="w-full z-[10000000] mb-4 md:mb-4 sticky top-4 md:top-8 relative flex justify-center"
+    class="w-full z-[10000000] mb-4 md:mb-4 sticky top-4 md:top-8 flex justify-center"
 >
     <div
         class="bg-bg p-4 mx-4 lg:mx-12 md:p-3 lg:px-4 rounded-xl md:w-2/3 w-full lg:w-1/2 bg-mbg/60 backdrop-blur-xl md:flex md:items-center md:justify-between"
@@ -21,7 +21,7 @@ const currentPath = Astro.url.pathname;
             </a>
             <span class="toggler self-center">
                 <i
-                    class={`text-[22px] cursor-pointer block md:hidden text-primary ph-light ph-list`}
+                    class={`text-[22px] cursor-pointer block md:hidden text-fg ph-light ph-list`}
                 ></i>
             </span>
         </div>
@@ -31,49 +31,54 @@ const currentPath = Astro.url.pathname;
             <li class="mx-0 my-6 md:my-0 md:mx-2">
                 <a
                     class:list={[
-                        `text-[19px] px-3 py-1 rounded-md hover:!text-primary font-medium !text-fg`,
+                        `text-[19px] px-0 md:px-3 py-1 rounded-md hover:!text-fg font-medium `,
                         currentPath.includes("/me")
-                            ? "md:bg-neutral-800"
-                            : "bg-transparent",
+                            ? "md:bg-neutral-800 !text-fg"
+                            : "bg-transparent !text-bright",
                     ]}
-                    href="/me">/me</a>
+                    href="/me">/me</a
+                >
             </li>
             <li class="mx-0 my-6 md:my-0 md:mx-2">
                 <a
                     class:list={[
-                        `text-[19px] px-3 py-1 rounded-md hover:!text-primary font-medium !text-fg`,
+                        `text-[19px] px-0 md:px-3 py-1 rounded-md hover:!text-fg font-medium`,
                         currentPath.includes("/blog")
-                            ? "md:bg-neutral-800"
-                            : "bg-transparent",
+                            ? "md:bg-neutral-800 !text-fg"
+                            : "bg-transparent !text-bright",
                     ]}
-                    href="/blog">/blog</a>
+                    href="/blog">/blog</a
+                >
             </li>
             <li class="mx-0 my-6 md:my-0 md:mx-2">
                 <a
                     class:list={[
-                        `text-[19px] px-3 py-1 rounded-md hover:!text-primary font-medium !text-fg`,
+                        `text-[19px] px-0 md:px-3 py-1 rounded-md hover:!text-fg font-medium`,
                         currentPath.includes("/poems")
-                            ? "md:bg-neutral-800"
-                            : "bg-transparent",
+                            ? "md:bg-neutral-800 !text-fg"
+                            : "bg-transparent !text-bright",
                     ]}
-                    href="/poems">/poems</a>
+                    href="/poems">/poems</a
+                >
             </li>
             <li class="mx-0 my-6 md:my-0 md:mx-2">
                 <a
                     class:list={[
-                        `text-[19px] px-3 py-1 rounded-md hover:!text-primary font-medium !text-fg`,
+                        `text-[19px] px-0 md:px-3 py-1 rounded-md hover:!text-fg font-medium `,
                         currentPath.includes("/stuff")
-                            ? "md:bg-neutral-800"
-                            : "bg-transparent",
+                            ? "md:bg-neutral-800 !text-fg"
+                            : "bg-transparent !text-bright",
                     ]}
-                    href="/stuff">/stuff</a>
+                    href="/stuff">/stuff</a
+                >
             </li>
             <span class="flex gap-4 lg:gap-0">
                 <li class="mx-0 my-2 md:my-0 md:mx-4">
                     <a
-                        class="text-xl hover:!text-primary font-medium !text-fg"
+                        class="text-xl hover:!text-fg font-medium !text-fg"
                         href="https://github.com/namishh"
-                        ><i class="ph-fill ph-github-logo"></i></a>
+                        ><i class="ph-fill ph-github-logo"></i></a
+                    >
                 </li>
             </span>
         </ul>
