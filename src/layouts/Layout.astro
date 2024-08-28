@@ -41,6 +41,7 @@ const { title, description } = Astro.props;
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
+        <script src="https://platform.twitter.com/widgets.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <meta name="generator" content={Astro.generator} />
         <meta
@@ -70,6 +71,15 @@ const { title, description } = Astro.props;
         </div>
     </body>
     <style is:global>
+        :root {
+            /* Control the padding inside the Tweet card. */
+            --tc-padding: 2em;
+            /* Set the border color of the Tweet card. */
+            --tc-border-color: #cfd9de;
+
+            --tc-background-color: #000;
+        }
+
         * {
             padding: 0;
             margin: 0;
