@@ -17,7 +17,7 @@ export default defineConfig({
   },
   integrations: [
     astroExpressiveCode({
-      themes: ["vitesse-black"],
+      themes: ["vitesse-black", "vitesse-light"],
       styleOverrides: {
         codeFontFamily: "Iosevka Nerd Font",
         codeFontSize: "16px",
