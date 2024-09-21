@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const skills = [
+
+const skills = ["Full Stack", "UI/UX", "Low Level", "Discord Bots"];
+
+const languages = [
     "HTML",
     "CSS",
     "SASS",
@@ -11,30 +14,39 @@ const skills = [
     "Lua",
     "C",
     "Python",
-    "TailwindCSS",
-    "DaisyUI",
-    "Bootstrap",
-    "Astro",
+];
+
+const databases = [
+    "Firebase",
+    "MongoDB",
+    "SQLite",
+    "MySQL",
+    "Postgres",
+    "Drizzle",
+    "Prisma",
+    "Diesel",
+];
+
+const webframeworks = [
+    "WASM",
+    "HTMX",
     "React",
     "NextJS",
     "RemixJS",
     "Vue",
-    "Node",
-    "Express",
+    "Svelte",
+    "SvelteKit",
+    "Astro",
     "Flask",
-    "Firebase",
-    "MongoDB",
-    "SQL",
-    "Postgres",
-    "Drizzle",
-    "Prisma",
-    "Figma",
-    "UI/UX",
-    "Discord.js",
-    "Discord.py",
-    "Serenity",
-    "Concord",
+    "Express",
+    "Rocket",
+    "Actix",
+    "Echo",
+    "Templ",
 ];
+
+const discordframeworks = ["Discord.js", "Discord.py", "Concord", "Serenity"];
+
 import Quote from "../components/Quote.astro";
 ---
 
@@ -67,12 +79,68 @@ import Quote from "../components/Quote.astro";
                 > it.
             </p>
             <div class="mt-8 h-[2px] px-16 bg-bg3 inline-block"></div>
-            <h1 class="text-xl md:text-2xl text-fg mt-8 mb-2">
+            <h1 class="text-xl text-fg mt-8 mb-2">
                 <span class="text-gray-500">Skill</span> Set
             </h1>
             <div class="flex flex-wrap gap-4">
                 {
                     skills.map((i, j) => {
+                        return (
+                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                                {i}
+                            </p>
+                        );
+                    })
+                }
+            </div>
+            <h1 class="text-xl text-fg mt-8 mb-2">
+                <span class="text-gray-500">Languages</span> I Know
+            </h1>
+            <div class="flex flex-wrap gap-4">
+                {
+                    languages.map((i, j) => {
+                        return (
+                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                                {i}
+                            </p>
+                        );
+                    })
+                }
+            </div>
+            <h1 class="text-xl text-fg mt-8 mb-2">
+                <span class="text-gray-500">Databases &</span> ORMS
+            </h1>
+            <div class="flex flex-wrap gap-4">
+                {
+                    databases.map((i, j) => {
+                        return (
+                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                                {i}
+                            </p>
+                        );
+                    })
+                }
+            </div>
+            <h1 class="text-xl text-fg mt-8 mb-2">
+                <span class="text-gray-500">Web</span> Tech
+            </h1>
+            <div class="flex flex-wrap gap-4">
+                {
+                    webframeworks.map((i, j) => {
+                        return (
+                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                                {i}
+                            </p>
+                        );
+                    })
+                }
+            </div>
+            <h1 class="text-xl text-fg mt-8 mb-2">
+                <span class="text-gray-500">Discord</span> Framewords
+            </h1>
+            <div class="flex flex-wrap gap-4">
+                {
+                    discordframeworks.map((i, j) => {
                         return (
                             <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
                                 {i}
