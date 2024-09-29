@@ -50,6 +50,12 @@ const configs = [
 ];
 const showoff = [
     {
+        name: "floww",
+        desc: "redefining the way to collaborate with people on youtube channels.",
+        tech: [{ name: "next", color: "bg-blue-300" }, { name: "wip" }],
+        link: "https://github.com/tryfloww"
+    },
+    {
         name: "holmes",
         desc: "0 js, 100% golang and templ batteries included starter kit for  crypt hunts",
         tech: [{ name: "templ", color: "bg-blue-300" }, { name: "golang" }],
@@ -65,7 +71,7 @@ const showoff = [
     {
         name: "biotrack",
         desc: "an online personal health diary to keep track of you life with ai assistance",
-        tech: [{ name: "golang", color: "bg-blue-300" }, { name: "js" }],
+        tech: [{ name: "golang", color: "bg-blue-300" }, { name: "js" }, {name: "gemini"}],
     },
     {
         name: "pound",
@@ -105,6 +111,15 @@ const decent = [
         name: "namishh.github.io",
         desc: "basically the blog you're seeing rn. rewritten with astro and tailwind",
         tech: [{ name: "astro", color: "bg-teal-300" }],
+        },
+    {
+        name: "lockin",
+        desc: "24x7 lofi radio plus general productivity website",
+        tech: [
+            { name: "next", color: "bg-teal-300" },
+            { name: "tailwind", color: "bg-blue-300" },
+            ],
+        link: "https://cafe.namishh.me",
     },
     {
         name: "techfestweb",
@@ -112,15 +127,8 @@ const decent = [
         tech: [
             { name: "remix", color: "bg-teal-300" },
             { name: "tailwind", color: "bg-blue-300" },
-        ],
-    },
-    {
-        name: "solace",
-        desc: "24x7 lofi radio plus productivity tool",
-        tech: [
-            { name: "next", color: "bg-teal-300" },
-            { name: "tailwind", color: "bg-blue-300" },
-        ],
+            ],
+            link: "https://techfestweb.vercel.app",
     },
     {
         name: "silxx",
@@ -129,6 +137,7 @@ const decent = [
             { name: "astro", color: "bg-teal-300" },
             { name: "tailwind", color: "bg-blue-300" },
         ],
+            link: "https://silxx.vercel.app",
     },
     {
         name: "crypt",
@@ -140,7 +149,7 @@ const decent = [
     },
     {
         name: "cyquest",
-        desc: "website for the cyquest 2023, made with a lot of head smashing and generous npm repos",
+        desc: "website for the cyquest 2023, with a complete desktop like interface",
         tech: [
             { name: "react", color: "bg-teal-300" },
             { name: "tailwind", color: "bg-blue-300" },
@@ -261,7 +270,8 @@ const meh = [
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
                     showoff.map((i) => (
-                        <Project name={i.name} desc={i.desc} tech={i.tech} />
+                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} />
+                      
                     ))
                 }
             </div>
@@ -275,7 +285,7 @@ const meh = [
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
                     decent.map((i) => (
-                        <Project name={i.name} desc={i.desc} tech={i.tech} />
+                    <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} />
                     ))
                 }
             </div>
@@ -291,7 +301,7 @@ const meh = [
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
                     bots.map((i) => (
-                        <Project name={i.name} desc={i.desc} tech={i.tech} />
+                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} />
                     ))
                 }
             </div>

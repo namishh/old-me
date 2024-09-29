@@ -1,11 +1,11 @@
 ---
-const { tech, desc, name } = Astro.props;
+const { tech, desc, name, link } = Astro.props;
 ---
 
 <div class="card w-full md:w-1/2 lg:w-1/2 self-stretch">
     <a
         class="cursor-pointer flex flex-col gap-3 md:p-2 p-2 h-full"
-        href={`https://github.com/namishh/${name}`}
+        href={link ? link : `https://github.com/namishh/${name}`}
     >
         <div
             class="border-neutral-800 lg:px-8 lg:py-6 md:px-4 px-4 py-4 bg-[#090909] rounded-lg"
