@@ -4,16 +4,16 @@ import Layout from "../layouts/Layout.astro";
 const skills = ["Full Stack", "UI/UX", "Low Level", "Discord Bots"];
 
 const languages = [
-    "HTML",
-    "CSS",
-    "SASS",
-    "JavaScript",
-    "TypeScript",
     "Golang",
     "Rust",
     "Lua",
     "C",
     "Python",
+    "HTML",
+    "CSS",
+    "SASS",
+    "JavaScript",
+    "TypeScript",
 ];
 
 const databases = [
@@ -28,12 +28,12 @@ const databases = [
 ];
 
 const webframeworks = [
+    "Tauri",
     "WASM",
     "HTMX",
     "React",
     "NextJS",
-    "RemixJS",
-    "Vue",
+    "Remix",
     "Svelte",
     "SvelteKit",
     "Astro",
@@ -70,79 +70,74 @@ import Quote from "../components/Quote.astro";
                 </p>
             </div>
             <p class="mt-8 text-[18px] md:text-[20px] text-bright">
-                Introverted silly dude, currently in my last year of school,
-                aiming to major in Computer Science. Loves to program everything
-                in anything. Hobbies also include writing poems playing the
-                piano. Enjoys programming and not <a
-                    class="text-fg underline"
-                    href="/blog/tryhard-to-enjoyer">tryhards</a
-                > it.
+            Just another dude who chronically loves to program literally everything in anything. While mainly <span class="text-fg"> creating for the web </span>, most of my personal favourite projects are <span class="text-fg"> low level. </span> Apart from that I'm also knd of proficient in the piano and playing tennis.
+
             </p>
             <div class="mt-8 h-[2px] px-16 bg-bg3 inline-block"></div>
-            <h1 class="text-xl text-fg mt-8 mb-2">
+            <h1 class="text-lg text-fg mt-8 mb-2">
                 <span class="text-gray-500">Skill</span> Set
             </h1>
             <div class="flex flex-wrap gap-4">
                 {
                     skills.map((i, j) => {
                         return (
-                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                            <p class="mt-2  bg-[#111] text-fg px-4 py-2 rounded-md">
                                 {i}
                             </p>
                         );
                     })
                 }
             </div>
-            <h1 class="text-xl text-fg mt-8 mb-2">
+            <h1 class="text-lg text-fg mt-8 mb-2">
                 <span class="text-gray-500">Languages</span> I Know
             </h1>
             <div class="flex flex-wrap gap-4">
                 {
                     languages.map((i, j) => {
                         return (
-                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                            <p class="mt-2 bg-[#111] text-fg px-4 py-2 rounded-md">
                                 {i}
                             </p>
                         );
                     })
                 }
             </div>
-            <h1 class="text-xl text-fg mt-8 mb-2">
+            <h1 class="text-lg text-fg mt-8 mb-2">
                 <span class="text-gray-500">Databases &</span> ORMS
             </h1>
             <div class="flex flex-wrap gap-4">
                 {
                     databases.map((i, j) => {
                         return (
-                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                            <p class="mt-2  bg-[#111] text-fg px-4 py-2 rounded-md">
                                 {i}
                             </p>
                         );
                     })
                 }
             </div>
-            <h1 class="text-xl text-fg mt-8 mb-2">
+            <h1 class="text-lg text-fg mt-8 mb-2">
                 <span class="text-gray-500">Web</span> Tech
             </h1>
             <div class="flex flex-wrap gap-4">
                 {
                     webframeworks.map((i, j) => {
                         return (
-                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                            <p class="mt-2  bg-[#111] text-fg px-4 py-2 rounded-md">
                                 {i}
                             </p>
                         );
                     })
                 }
             </div>
-            <h1 class="text-xl text-fg mt-8 mb-2">
+            <h1 class="text-lg text-fg mt-8 mb-2">
                 <span class="text-gray-500">Discord</span> Framewords
             </h1>
             <div class="flex flex-wrap gap-4">
                 {
                     discordframeworks.map((i, j) => {
                         return (
-                            <p class="mt-2  bg-mbg text-fg px-4 py-2 rounded-md">
+                            <p class="mt-2  bg-[#111] text-fg px-4 py-2 rounded-md">
                                 {i}
                             </p>
                         );
@@ -157,7 +152,7 @@ import Quote from "../components/Quote.astro";
                 class="list-decimal leading-[2.6rem] list-inside mt-4 text-[16px] md:text-[18px] text-bright"
             >
                 <li>
-                    Operating System: <span class="text-fg">Arch // Nix OS</span
+                    Operating System: <span class="text-fg">arch // nix os</span
                     >
                 </li>
                 <li>
@@ -170,7 +165,7 @@ import Quote from "../components/Quote.astro";
                         >wezterm with bash</span
                     >
                 </li>
-                <li>Code Editor: <span class="text-fg">Neovim // Zed</span></li>
+                <li>Code Editor: <span class="text-fg">neovim</span></li>
             </ul>
             <div class="mt-8 h-[2px] px-16 bg-bg3 inline-block"></div>
             <h1 class="text-xl md:text-2xl text-fg mt-8 mb-2">
