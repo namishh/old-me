@@ -15,20 +15,20 @@ let a = [blogs[0], blogs[1], blogs[2], blogs[3]];
                 <img
                     src="https://avatars.githubusercontent.com/u/68964499?v=4"
                     alt="pfp"
-                    class="h-12 w-12 rounded-full border-[1px] border-fg"
+                    class="h-10 md:h-12 w-10 md:w-12 rounded-full border-[1px] border-fg"
                 />
-                <h1 class="text-3xl text-left text-fg self-end">Namish</h1>
+                <h1 class="text-xl md:text-3xl text-left text-fg self-end">Namish</h1>
                 <h1 class="text-lg text-gray-500 text-left self-end">
                     17M (he/him)
                 </h1>
             </div>
-            <p class="mt-8 text-[18px] md:text-[20px] text-bright">
+            <p class="mt-8 text-[16px] md:text-[20px] text-bright">
                 Hello! I am Namish, you can call me <i class="text-fg">nam</i> or
                 still refer me via my old internet alias, <i class="text-fg"
                     >chadcat7</i
                 >.
             </p>
-            <p class="mt-4 text-[18px] md:text-[20px] text-bright">
+            <p class="mt-4 text-[16px] md:text-[20px] text-bright">
                 An above average programmer. Likes minimalism, <span
                     class="text-fg">neovim</span
                 >, <span class="text-fg">arch</span> and <span class="text-fg"
@@ -43,8 +43,8 @@ let a = [blogs[0], blogs[1], blogs[2], blogs[3]];
                     ><a href="/blog" class="text-fg underline">blogs</a></span
                   > in my free time. I also upload some of my <a href="https://notes.namishh.me" class="text-fg underline">programming notes</a>.
             </p>
-            <p class="mt-4 text-[18px] md:text-[20px] text-bright">
-            <span class="">View my </span> <a href="/resume" class="text-fg underline">profresionally unprofressional resume</a>.
+            <p class="mt-4 text-[16px] md:text-[20px] text-bright">
+            <span class="">View my </span> <a href="/resume" class="text-fg underline">resume</a>.
             </p>
             <div class="my-8 h-[2px] px-16 bg-bg3 inline-block"></div>
             <h1 class="text-xl md:text-2xl text-fg">
@@ -54,7 +54,7 @@ let a = [blogs[0], blogs[1], blogs[2], blogs[3]];
                 >
             </h1>
 
-            <p class="mt-2 text-[18px] md:text-[20px] text-bright">
+            <p class="mt-2 text-[16px] md:text-[20px] text-bright">
                 Here are some projects worth showing. You can find all of them <a
                     href="/stuff"
                     class="text-fg underline">here.</a
@@ -142,12 +142,12 @@ let a = [blogs[0], blogs[1], blogs[2], blogs[3]];
                 {
                     a.map((i, j) => {
                         return (
-                            <li class="cursor-pointer my-6 w-full">
+                            <li class="cursor-pointer md:my-6 my-3 w-full">
                                 <a
                                     class="flex justify-between w-full"
                                     href={`/blog/${i.file.split("/").pop().split(".").shift()}`}
                                 >
-                                    <p class="text-fg text-[18px] md:text-[20px]">
+                                    <p class="text-fg text-[16px] md:text-[20px]">
                                         {j + 1}. {i.frontmatter.title}
                                     </p>
                                     <span class="mr-2 text-lg text-gray-500">
@@ -160,7 +160,7 @@ let a = [blogs[0], blogs[1], blogs[2], blogs[3]];
                 }
             </ul>
             <div class="my-8 h-[2px] px-16 bg-bg3 inline-block"></div>
-            <p class="text-[18px] md:text-[20px] text-bright">
+            <p class="text-[16px] md:text-[20px] text-bright">
                 I am online at <a
                     target="_blank"
                     href="https://discord.com/users/715825910611443722"
