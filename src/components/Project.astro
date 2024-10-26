@@ -10,10 +10,8 @@ const { tech, desc, name, link } = Astro.props;
         <div
             class="border-neutral-800 lg:px-8 lg:py-6 md:px-4 px-4 py-4 bg-[#090909] rounded-lg"
         >
-            <div class="flex items-center flex-wrap gap-4">
-                <p class="font-bold text-2xl text-primary">{name}</p>
-            </div>
-            <p class="font-light mt-4 mb-8 leading-6 text-fg">{desc}</p>
+                <p class="md:font-bold text-xl md:text-2xl text-primary">{name}</p>
+            <p class="font-light mt-2 md:mt-4 mb-6 md:mb-8 leading-6 text-[16px] md:text-lg text-fg">{desc}</p>
             <div class="flex gap-4 flex-wrap self-center">
                 {
                     tech.map((i) => (
