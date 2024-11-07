@@ -18,35 +18,6 @@ const configs = [
             { name: "lua", color: "bg-blue-900" },
         ],
     },
-    {
-        name: "prism",
-        desc: "neovim plugin to easily have custom colorschemes with caching for speed",
-        tech: [
-            { name: "neovim", color: "bg-green-400" },
-            { name: "lua", color: "bg-blue-900" },
-        ],
-    },
-    {
-        name: "dwm",
-        desc: "my custom dwm build that is both beautiful and functional",
-        tech: [
-            { name: "wm", color: "bg-green-400" },
-            { name: "ricing", color: "bg-blue-900" },
-        ],
-    },
-    {
-        name: "st",
-        desc: "an actual usable build of the suckless terminal. (also looks good)",
-        tech: [
-            { name: "terminal", color: "bg-green-400" },
-            { name: "ricing", color: "bg-blue-900" },
-        ],
-    },
-    {
-        name: "lxconf",
-        desc: "my beautiful looking litexl config aimed for fast and speedy development",
-        tech: [{ name: "lua", color: "bg-green-400" }],
-    },
 ];
 const showoff = [
     {
@@ -79,23 +50,30 @@ const showoff = [
         tech: [{ name: "c", color: "bg-blue-300" }],
         },
     {
-        name: "zenote",
-        desc: "desktop app to create markdown notes locally without any uneeded bs",
-        tech: [{ name: "tauri", color: "bg-blue-300" }, {name: "react"}],
-    },
-    {
-        name: "shawty",
-        desc: "a url shortener written entirely in pure C and HTMX",
+        name: "prism",
+        desc: "neovim plugin to easily have custom colorschemes with caching for speed",
         tech: [
-            { name: "c", color: "bg-blue-300" },
-            { name: "htmx", color: "bg-teal-300" },
+            { name: "neovim", color: "bg-green-400" },
+            { name: "lua", color: "bg-blue-900" },
         ],
     },
+];
+
+const decent = [
     {
-        name: "neuing",
-        desc: "a neural network written entirely in golang without external modules",
-        tech: [{ name: "golang", color: "bg-blue-300" }],
+        name: "webby",
+        desc: "web server written entirely from scratch in c. (with a basic todo app)",
+        tech: [{ name: "c", color: "bg-blue-300" }],
     },
+    {
+        name: "lockin",
+        desc: "24x7 lofi radio plus general productivity website",
+        tech: [
+            { name: "next", color: "bg-teal-300" },
+            { name: "tailwind", color: "bg-blue-300" },
+            ],
+        link: "https://cafe.namishh.me",
+        },
     {
         name: "lovbyte",
         desc: "Dating app for programmers rich with features, minimal by design. ",
@@ -105,26 +83,17 @@ const showoff = [
         ],
     },
     {
-        name: "webby",
-        desc: "web server written entirely from scratch in c. (with a basic todo app)",
-        tech: [{ name: "c", color: "bg-blue-300" }],
-    },
-];
-
-const decent = [
-    {
-        name: "me",
-        desc: "my very own minimal and no nonsense portfolio site.",
-        tech: [{ name: "astro", color: "bg-teal-300" }],
+        name: "neuing",
+        desc: "a neural network written entirely in golang without external modules",
+        tech: [{ name: "golang", color: "bg-blue-300" }],
         },
     {
-        name: "lockin",
-        desc: "24x7 lofi radio plus general productivity website",
+        name: "shawty",
+        desc: "a url shortener written entirely in pure C and HTMX",
         tech: [
-            { name: "next", color: "bg-teal-300" },
-            { name: "tailwind", color: "bg-blue-300" },
-            ],
-        link: "https://cafe.namishh.me",
+            { name: "c", color: "bg-blue-300" },
+            { name: "htmx", color: "bg-teal-300" },
+        ],
     },
     {
         name: "techfestweb",
@@ -136,15 +105,6 @@ const decent = [
             link: "https://techfestweb.vercel.app",
     },
     {
-        name: "silxx",
-        desc: "beautiful concept website made for school event",
-        tech: [
-            { name: "astro", color: "bg-teal-300" },
-            { name: "tailwind", color: "bg-blue-300" },
-        ],
-            link: "https://silxx.vercel.app",
-    },
-    {
         name: "hacknio",
         desc: "almost redid the entire ui for this hackernews frontend",
         tech: [
@@ -152,14 +112,6 @@ const decent = [
             { name: "tailwind", color: "bg-blue-300" },
             ],
         link: "https://hacknio.vercel.app",
-    },
-    {
-        name: "crypt",
-        desc: "simple crypt hunt website made for learning actual back end development",
-        tech: [
-            { name: "next", color: "bg-teal-300" },
-            { name: "express", color: "bg-blue-300" },
-        ],
     },
     {
         name: "cyquest",
@@ -176,6 +128,11 @@ const decent = [
             { name: "html", color: "bg-orange-400" },
             { name: "flask", color: "bg-blue-300" },
         ],
+        },
+    {
+        name: "zenote",
+        desc: "desktop app to create markdown notes locally without any uneeded bs",
+        tech: [{ name: "tauri", color: "bg-blue-300" }, {name: "react"}],
     },
 ];
 
@@ -192,95 +149,24 @@ const bots = [
     },
     {
         name: "remellow",
-        desc: "a better and upgraded version with like 3x the features with discord.js",
+        desc: "general purpose discord bot with discord.js",
         tech: [{ name: "javascript", color: "bg-yellow-200" }],
-    },
-    {
-        name: "marshmallow",
-        desc: "discord bot to keep the server cool! made with discord.py",
-        tech: [{ name: "python", color: "bg-blue-300" }],
-    },
-    {
-        name: "crabby",
-        desc: "yet another general purpose discord bot to learn rust",
-        tech: [{ name: "rust", color: "bg-blue-300" }],
     },
 ];
 
-const meh = [
-    {
-        name: "kinben",
-        desc: "a personal dashboard, lofi player, pomodoro timer and a kanban board",
-        tech: [
-            { name: "next", color: "bg-teal-300" },
-            { name: "tailwind", color: "bg-blue-300" },
-        ],
-    },
-    {
-        name: "venusta",
-        desc: "a small utility to extract colors from images and generate palettes",
-        tech: [{ name: "golang", color: "bg-blue-300" }],
-    },
-    {
-        name: "captivus",
-        desc: "prisoner's dillema simulator built for a programming event",
-        tech: [{ name: "python", color: "bg-blue-300" }],
-    },
-    {
-        name: "fetch.rs",
-        desc: "simple and fast system fetch script to flex like a real unixporner",
-        tech: [{ name: "rust", color: "bg-blue-300" }],
-    },
-    {
-        name: "photomena",
-        desc: "barebones image editor powered by opencv, number and tkinter",
-        tech: [{ name: "python", color: "bg-blue-300" }],
-    },
-    {
-        name: "spirit",
-        desc: "a very cool voice assitant to look up things, made when learning python",
-        tech: [{ name: "python", color: "bg-blue-300" }],
-    },
-    {
-        name: "newsy",
-        desc: "my first project in python. made using newsapi and tkinter",
-        tech: [{ name: "python", color: "bg-blue-300" }],
-    },
-    {
-        name: "diff",
-        desc: "very basic program for very basic expressions to return their derivative",
-        tech: [{ name: "python", color: "bg-blue-300" }],
-    },
-    {
-        name: "save-wildlife",
-        desc: "website made for a competiton for wildlife conservation",
-        tech: [
-            { name: "html", color: "bg-orange-400" },
-            { name: "js", color: "bg-yellow-200" },
-            { name: "sass", color: "bg-rose-300" },
-        ],
-    },
-    {
-        name: "project-news",
-        desc: "a very simple news website with flask made in half a day",
-        tech: [
-            { name: "html", color: "bg-orange-400" },
-            { name: "flask", color: "bg-blue-300" },
-        ],
-    },
-];
 ---
 
 <Layout title="nam's experiments" description="List of personal projects">
     <div
-        class="text-slate-50 p-2 sm:p-8 md:p-8 lg:px-8 lg:p-8 text-lg leading-10"
+        class="text-slate-50 p-2 sm:p-8 md:p-8 lg:px-2 lg:p-8 text-lg leading-10"
+
     >
         <section class="flex flex-col items-center justify-center w-full">
             <h1
                 class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
             >
-                Good <span class="text-fg">Ones</span>
+                good <span class="text-fg">ones</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
@@ -296,7 +182,7 @@ const meh = [
                 class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
             >
-                Decent <span class="text-fg">Projects</span>
+                decent <span class="text-fg">projects</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
@@ -313,7 +199,7 @@ const meh = [
                 class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
                 >
-                Discord <span class="text-fg">Bots</span>
+                discord <span class="text-fg">bots</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
@@ -330,28 +216,11 @@ const meh = [
                 class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
             >
-                Dotfiles & <span class="text-fg">Configs</span>
+                dotfiles & <span class="text-fg">configs</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
                     configs.map((i) => (
-                        <Project name={i.name} desc={i.desc} tech={i.tech} />
-                    ))
-                }
-            </div>
-        </section>
-        <section
-            class="my-2 md:my-10 flex flex-col items-center justify-center w-full"
-        >
-            <h1
-                class="text-2xl sm:text-3xl font-bold ms:my-8 my-2 mb-4 px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
-                >
-
-                Other <span class="text-fg">Projects</span>
-            </h1>
-            <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
-                {
-                    meh.map((i) => (
                         <Project name={i.name} desc={i.desc} tech={i.tech} />
                     ))
                 }
