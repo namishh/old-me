@@ -15,7 +15,7 @@ const { title, description, date, author } = frontmatter;
 <Layout title={title} description={description}>
     <div class="flex justify-center">
         <div
-            class="div content my-4 flex flex-col gap-2 justify-center items-center break-words w-full md:w-3/4 lg:w-3/5 text-fg p-4 md:p-8 md:px-16 lg:p-8 lg:px-32 text-[18px] leading-[2.25rem] sm:text-lg sm:leading-10"
+            class="div content my-4 flex flex-col gap-2 justify-center items-center break-words w-full md:w-3/4 lg:w-3/5 text-fg p-4 md:p-8 md:px-16 lg:p-8 lg:px-32 text-[16px] leading-[2.25rem] sm:text-lg sm:leading-10"
         >
             <p class="text-2xl md:text-3xl font-bold self-start">
                 {title}
@@ -39,23 +39,23 @@ const { title, description, date, author } = frontmatter;
     h2,
     h3,
     h4 {
-        @apply font-sans my-3;
+        @apply font-sans my-3 text-fg;
     }
     .content h1 {
-        @apply md:text-4xl text-2xl font-bold;
+        @apply text-2xl md:text-4xl font-bold;
     }
     .content h2 {
-        @apply md:text-3xl text-xl font-bold;
+        @apply text-xl md:text-3xl font-bold;
     }
     .content h3 {
-        @apply md:text-2xl text-xl;
+      @apply text-xl md:text-2xl;
     }
     .content ul {
         @apply list-disc ml-4 text-fg;
     }
 
     .content a {
-        @apply text-primary text-lg font-medium underline underline-offset-4;
+        @apply text-indigo-300 text-lg font-medium underline underline-offset-4;
     }
 
     .content hr {
