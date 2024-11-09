@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+const quotes = [
+  {
+    author: "Bob Ross",
+    quote: "Talent is just a pursued interest"
+  },
+  {
+    author: "@hamptonism",
+    quote: "People want you to lose because it will justify the risk they never took."
+    },
+  {
+    author: "Ryo Kamada",
+    quote: "abandoning your uniqueness is similar to dying"
+    },
+  {
+    author: "@cneuralnetwork",
+    quote: "Do you give money to beggars so that he does better or in the hope that God will do good stuff for you? if you're just donating to get some good points from god, then who's the real beggar?"
+  },
+    {
+    author: "@naval",
+    quote: "The basis for friendship, relationship, partnership - isn’t proximity or time spent together - it’s values."
+    }
+]
+---
+<Layout title="quotes" description="some good quotes from various sources.">
+    <div class="w-full flex justify-center md:pt-8 flex-col items-center gap-2">
+      <div class="md:w-2/3 pt-4 px-4 w-full lg:w-1/2  flex-col">
+          <h1 class="lg:px-0 md:px-8 px-4 text-2xl md:text-3xl font-bold text-fg">quotes</h1>
+          <h1 class="lg:px-0 md:px-8 px-4 text-[16px] md:text-[20px] my-2 text-bright">some quotes from vaious sources that i liked</h1>
+                        {
+                          quotes.map((quote) => {
+                                return (
+                                <div class="mt-4 flex  text-[14px] md:text-[16px] group flex-col p-2 md:p-4 bg-mbg border-l-2 transition border-neutral-800 hover:border-bright">
+                                  <h1 class="lg:px-0 transition md:px-8 lowercase px-4 group-hover:text-fg cursor-normal my-2 text-bright">{quote.quote}</h1>
+                                  <div class="self-end mt-2 italic lowercase text-bright">{quote.author}</div>
+                                    </div>
+                                );
+                            })
+                        }
+        </div>
+    </div>
+</Layout>
