@@ -19,13 +19,28 @@ const configs = [
         ],
     },
 ];
-const showoff = [
+const flora = [
     {
-        name: "floww",
+        name: "aster",
         desc: "redefining the way to collaborate with people on youtube channels.",
         tech: [{ name: "solid start", color: "bg-blue-300" }, { name: "wip" }],
-        link: "https://github.com/tryfloww"
+        link: "https://github.com/floraorg/aster"
     },
+    {
+        name: "sakura",
+        desc: "beautiful, fast and uniquely generated avatars as a microservice",
+        tech: [{ name: "golang", color: "bg-blue-300" }],
+        link: "https://github.com/floraorg/sakura"
+    },
+    {
+        name: "faux",
+        desc: "minimal, fast and eyecandy placeholders as a microservice",
+        tech: [{ name: "golang", color: "bg-blue-300" }],
+        link: "https://github.com/floraorg/faux"
+    },
+]
+
+const showoff = [
     {
         name: "holmes",
         desc: "0 js, 100% golang and templ batteries included starter kit for  crypt hunts",
@@ -161,6 +176,22 @@ const bots = [
         class="text-slate-50 p-2 sm:p-8 md:p-8 lg:px-2 lg:p-8 text-lg leading-10"
 
     >
+        <section class="flex flex-col items-center justify-center w-full">
+            <h1
+                class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
+                
+            >
+                flora<span class="text-fg">org</span>
+            </h1>
+            <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
+                {
+                    flora.map((i) => (
+                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} />
+                      
+                    ))
+                }
+            </div>
+        </section>
         <section class="flex flex-col items-center justify-center w-full">
             <h1
                 class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
