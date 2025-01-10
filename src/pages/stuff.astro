@@ -179,20 +179,20 @@ const bots = [
 
 <Layout title="nam's experiments" description="List of personal projects">
     <div
-        class="text-slate-50 p-2 sm:p-8 md:p-8 lg:px-2 lg:p-8 text-lg leading-10"
+        class="text-slate-50 py-2 sm:py-8 md:py-8 lg:py-4 text-lg leading-10"
 
     >
         <section class="flex flex-col items-center justify-center w-full">
             <h1
-                class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
+                class="text-xl sm:text-2xl  xs:my-8 my-2 mb-4 px-4 font-serif text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
             >
-                flora<span class="text-fg">org</span>
+                flora<span class="text-fg font-serif">org</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
-                    flora.map((i) => (
-                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} />
+                    flora.map((i, j) => (
+                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} index={j} />
                       
                     ))
                 }
@@ -200,15 +200,15 @@ const bots = [
         </section>
         <section class="flex flex-col items-center justify-center w-full">
             <h1
-                class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
+                class="text-xl sm:text-2xl  xs:my-8 my-2 mb-4 px-4 font-serif text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
             >
-                good <span class="text-fg">ones</span>
+                good <span class="text-fg font-serif">ones</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
-                    showoff.map((i) => (
-                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} />
+                    showoff.map((i, j) => (
+                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} index={j} />
                       
                     ))
                 }
@@ -216,15 +216,15 @@ const bots = [
         </section>
         <section class="flex flex-col items-center justify-center w-full">
             <h1
-                class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
+                class="text-xl sm:text-2xl  xs:my-8 my-2 mb-4 px-4 font-serif text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
             >
-                decent <span class="text-fg">projects</span>
+                decent <span class="text-fg font-serif">projects</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
-                    decent.map((i) => (
-                    <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} />
+                    decent.map((i, j) => (
+                    <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} index={j} />
                     ))
                 }
             </div>
@@ -233,15 +233,15 @@ const bots = [
             class="mt-2 md:mt-10 flex flex-col items-center justify-center w-full"
         >
             <h1
-                class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
+                class="text-xl sm:text-2xl  xs:my-8 my-2 mb-4 px-4 font-serif text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
                 >
-                discord <span class="text-fg">bots</span>
+                discord <span class="text-fg font-serif">bots</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
-                    bots.map((i) => (
-                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} />
+                    bots.map((i, j) => (
+                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} index={j} />
                     ))
                 }
             </div>
@@ -250,15 +250,15 @@ const bots = [
             class="mt-2 md:mt-10 flex flex-col items-center justify-center w-full"
         >
             <h1
-                class="text-2xl sm:text-3xl font-bold xs:my-8 my-2 mb-4 px-2 md:px-8 text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
+                class="text-xl sm:text-2xl  xs:my-8 my-2 mb-4 px-4 font-serif text-neutral-500 w-full lg:w-1/2 md:w-2/3 text-left"
                 
             >
-                dotfiles & <span class="text-fg">configs</span>
+                dotfiles & <span class="text-fg font-serif">configs</span>
             </h1>
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
-                    configs.map((i) => (
-                        <Project name={i.name} desc={i.desc} tech={i.tech} />
+                    configs.map((i, j) => (
+                        <Project name={i.name} desc={i.desc} tech={i.tech} index={j} />
                     ))
                 }
             </div>

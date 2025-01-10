@@ -15,11 +15,9 @@ const { title, description, date, author } = frontmatter;
 <Layout title={title} description={description}>
     <div class="flex justify-center">
         <div
-            class="div content my-4 flex flex-col gap-2 justify-center items-center break-words w-full md:w-3/4 lg:w-3/5 text-fg p-4 md:p-8 md:px-16 lg:p-8 lg:px-32 text-[16px] leading-[2.25rem] sm:text-lg sm:leading-10"
+            class="div content my-4 flex flex-col gap-2 justify-center items-center break-words w-full md:w-3/4 lg:w-3/5 p-4 md:p-8 md:px-16 lg:p-8 lg:px-24 "
         >
-            <p class="text-2xl md:text-3xl font-bold self-start">
-                {title}
-            </p>
+            <p class="text-2xl md:text-3xl font-serif self-start text-fg">{title}</p>
             <div class="w-full"><Content /></div>
             <div class="self-end">
                 <div class="mt-4 flex justify-end items-center gap-2">
@@ -35,11 +33,19 @@ const { title, description, date, author } = frontmatter;
     </div>
 </Layout>
 <style is:global>
+
+    .content {
+        @apply text-[#ddd] font-[16px] leading-8;
+    }
+    .content strong {
+        @apply text-fg font-bold;
+    }
+
     .content h1,
     h2,
     h3,
     h4 {
-        @apply font-sans my-3 text-fg;
+        @apply font-sans my-3 text-fg font-serif;
     }
     .content h1 {
         @apply text-2xl md:text-4xl font-bold;

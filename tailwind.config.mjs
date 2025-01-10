@@ -10,6 +10,7 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
+      serif: ["Playfair Display", "ui-serif", "system-ui"],
       sans: ["Geist", "ui-sans-serif", "system-ui"],
       mono: ["Iosevka", "ui-monospace", "SFMono-Regular"],
     },

@@ -1,21 +1,21 @@
 ---
-const { tech, desc, name, link } = Astro.props;
+const { tech, desc, name, link, j } = Astro.props;
 ---
 
 <div class="card w-full md:w-1/2 lg:w-1/2 self-stretch">
     <a
-        class="cursor-pointer flex flex-col gap-3 md:p-2 p-2 h-full"
+        class={`cursor-pointer flex flex-col gap-3 ${j % 2 == 0 ? "md:pl-4 pr-2 pl-2" : "md:pr-4 pl-2 pr-2"} py-2 h-full`}
         href={link ? link : `https://github.com/namishh/${name}`}
     >
         <div
             class="border-neutral-800 lg:px-8 lg:py-6 md:px-4 px-4 py-4 bg-[#090909] rounded-lg"
         >
-                <p class="md:font-bold text-xl md:text-2xl text-fg">{name}</p>
-            <p class="font-light mt-2 md:mt-4 mb-6 md:mb-8 leading-6 text-[16px] md:text-lg text-bright">{desc}</p>
+                <p class="font-serif text-xl text-fg">{name}</p>
+            <p class="font-light mt-2 md:mt-4 mb-4 leading-6 text-[16px] text-bright">{desc}</p>
             <div class="flex gap-4 flex-wrap self-center">
                 {
                     tech.map((i) => (
-                        <span class="bg-[#1a1a1a]  py-[3px]  text-fg text-sm px-4 font-mono rounded-2xl">
+                        <span class="bg-[#1a1a1a]  py-[3px] text-neutral-400 text-sm px-2 font-mono rounded-2xl">
                             {i.name}
                         </span>
                     ))
