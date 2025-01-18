@@ -10,7 +10,7 @@ export async function GET(context) {
             const pubDate = new Date(dateStr);
             
             return {
-                link: post.url,
+                link: `https://namishh.me/${type}/${post.file.split("/").pop().split(".").shift()}`,
                 title: post.frontmatter.title,
                 description: post.frontmatter.description,
                 pubDate,
