@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 
 export async function GET(context) {
-    const blogPosts = import.meta.glob('../blogs/*.{md,mdx}', { eager: true });
+    const blogPosts = import.meta.glob('../blog/*.{md,mdx}', { eager: true });
     const poems = import.meta.glob('../poems/*.{md,mdx}', { eager: true });
 
     const createRssItems = (posts, type) => {
