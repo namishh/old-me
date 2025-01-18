@@ -9,7 +9,7 @@ export const Sin = () => {
     })
   }, [])
   return (
-    <div className="my-8 rounded-lg">
+    <div class="my-8 rounded-lg">
       <Mafs>
         <Coordinates.Cartesian />
         <Plot.OfX y={Math.sin} color={Theme.blue} />

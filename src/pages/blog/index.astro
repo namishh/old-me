@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import List from "../../components/List.astro";
-let allPosts = await Astro.glob("../../blogs/*.mdx");
+let allPosts = await Astro.glob("../../blog/*.mdx");
 let arr = allPosts.sort(
     (a, b) =>
         new Date(b.frontmatter.date).valueOf() -

@@ -208,7 +208,7 @@ const bots = [
             <div class="flex flex-wrap w-full lg:w-1/2 md:w-2/3">
                 {
                     showoff.map((i, j) => (
-                        <Project name={i.name} link={i.link} desc={i.desc} tech={i.tech} index={j} />
+                        <Project name={i.name} link={i.link! || ''} desc={i.desc} tech={i.tech} index={j} />
                       
                     ))
                 }
