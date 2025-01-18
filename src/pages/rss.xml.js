@@ -29,8 +29,8 @@ export async function GET(context) {
         .sort((a, b) => b.pubDate - a.pubDate);
 
     return rss({
-        title: 'Nam\'s Blog',
-        description: 'A techonology and personal yap place',
+        title: 'namishh\'s Blog',
+        description: 'technology, poetry and personal yap place',
         site: context.site,
         items: allItems,
         customData: `<language>en-us</language>`,
