@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/mdx": "^1.1.3",
     "@astrojs/react": "^3.0.4",
+    "@astrojs/rss": "^4.0.11",
     "@astrojs/tailwind": "^5.0.2",
     "@expressive-code/plugin-frames": "^0.35.3",
     "@expressive-code/plugin-text-markers": "^0.35.3",
